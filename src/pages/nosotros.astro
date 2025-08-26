@@ -1,0 +1,65 @@
+---
+// Página "Sobre Nosotros" para SUMAQ AGRO
+import Header from '../components/Header.astro';
+import About from '../components/About.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>Sobre SUMAQ AGRO - Nuestra Historia, Misión y Valores | Agricultura Sostenible</title>
+		<meta name="description" content="Conoce la historia de SUMAQ AGRO, nuestra misión de transformar la agricultura con innovación sostenible, y los valores que nos guían desde 2009." />
+		<meta name="keywords" content="historia SUMAQ AGRO, misión agrícola, valores corporativos, agricultura sostenible, innovación agrícola" />
+		<meta name="author" content="SUMAQ AGRO" />
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="Sobre SUMAQ AGRO - Nuestra Historia, Misión y Valores" />
+		<meta property="og:description" content="Conoce la historia de SUMAQ AGRO y nuestra misión de transformar la agricultura con innovación sostenible." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://sumaqagro.com/nosotros" />
+		<meta property="og:image" content="/og-image.jpg" />
+		
+		<!-- Preconnect to external resources -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		
+		<!-- Global Styles -->
+		<link rel="stylesheet" href="/src/styles/global.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<Header />
+		
+		<!-- About Section -->
+		<About />
+		
+		<!-- Footer -->
+		<Footer />
+		
+		<!-- Smooth Scrolling Script -->
+		<script>
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', (e: Event) => {
+					e.preventDefault();
+					const target = document.querySelector((anchor as HTMLAnchorElement).getAttribute('href') || '');
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

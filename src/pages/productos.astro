@@ -1,0 +1,65 @@
+---
+// Página "Productos" para SUMAQ AGRO
+import Header from '../components/Header.astro';
+import Products from '../components/Products.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>Productos Agrícolas SUMAQ AGRO - Fertilizantes Orgánicos, Semillas, Biopesticidas | Agricultura Sostenible</title>
+		<meta name="description" content="Catálogo de productos SUMAQ AGRO: fertilizantes orgánicos, semillas certificadas, biopesticidas y equipos de precisión para agricultura sostenible." />
+		<meta name="keywords" content="productos agrícolas, fertilizantes orgánicos, semillas certificadas, biopesticidas, equipos de precisión, agricultura sostenible" />
+		<meta name="author" content="SUMAQ AGRO" />
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="Productos Agrícolas SUMAQ AGRO - Soluciones de Alta Calidad" />
+		<meta property="og:description" content="Soluciones de alta calidad diseñadas para maximizar el rendimiento de tus cultivos." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://sumaqagro.com/productos" />
+		<meta property="og:image" content="/og-image.jpg" />
+		
+		<!-- Preconnect to external resources -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		
+		<!-- Global Styles -->
+		<link rel="stylesheet" href="/src/styles/global.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<Header />
+		
+		<!-- Products Section -->
+		<Products />
+		
+		<!-- Footer -->
+		<Footer />
+		
+		<!-- Smooth Scrolling Script -->
+		<script>
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', (e: Event) => {
+					e.preventDefault();
+					const target = document.querySelector((anchor as HTMLAnchorElement).getAttribute('href') || '');
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

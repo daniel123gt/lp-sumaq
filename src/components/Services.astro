@@ -1,0 +1,399 @@
+---
+// Services section component for SUMAQ AGRO
+---
+
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-subtitle">
+        Soluciones integrales para maximizar la productividad agrícola de manera sostenible
+      </p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <div class="icon-soil"></div>
+        </div>
+        <h3>Análisis de Suelos</h3>
+        <p>
+          Evaluación completa de la salud del suelo, incluyendo análisis químico, 
+          físico y biológico para optimizar la fertilización y el manejo de cultivos.
+        </p>
+        <ul class="service-features">
+          <li>Análisis de nutrientes</li>
+          <li>Evaluación de pH y textura</li>
+          <li>Recomendaciones personalizadas</li>
+        </ul>
+        <a href="/contacto" class="service-cta">Solicitar Análisis</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <div class="icon-irrigation"></div>
+        </div>
+        <h3>Sistemas de Riego</h3>
+        <p>
+          Diseño e implementación de sistemas de riego inteligentes que optimizan 
+          el uso del agua y mejoran la eficiencia de los cultivos.
+        </p>
+        <ul class="service-features">
+          <li>Riego por goteo</li>
+          <li>Riego por aspersión</li>
+          <li>Control automatizado</li>
+        </ul>
+        <a href="/contacto" class="service-cta">Consultar Proyecto</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <div class="icon-pest"></div>
+        </div>
+        <h3>Manejo Integrado de Plagas</h3>
+        <p>
+          Control biológico y químico de plagas y enfermedades, minimizando el 
+          impacto ambiental y maximizando la protección de cultivos.
+        </p>
+        <ul class="service-features">
+          <li>Control biológico</li>
+          <li>Monitoreo continuo</li>
+          <li>Tratamientos específicos</li>
+        </ul>
+        <a href="/contacto" class="service-cta">Evaluar Necesidades</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <div class="icon-consulting"></div>
+        </div>
+        <h3>Consultoría Agrícola</h3>
+        <p>
+          Asesoramiento especializado en planificación de cultivos, selección de 
+          variedades y estrategias de producción sostenible.
+        </p>
+        <ul class="service-features">
+          <li>Planificación de cultivos</li>
+          <li>Selección de variedades</li>
+          <li>Estrategias sostenibles</li>
+        </ul>
+        <a href="/contacto" class="service-cta">Agendar Consulta</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <div class="icon-technology"></div>
+        </div>
+        <h3>Tecnología Agrícola</h3>
+        <p>
+          Implementación de tecnologías de precisión como drones, sensores y 
+          sistemas de monitoreo para agricultura inteligente.
+        </p>
+        <ul class="service-features">
+          <li>Monitoreo con drones</li>
+          <li>Sensores de suelo</li>
+          <li>Agricultura de precisión</li>
+        </ul>
+        <a href="/contacto" class="service-cta">Explorar Tecnologías</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <div class="icon-training"></div>
+        </div>
+        <h3>Capacitación y Entrenamiento</h3>
+        <p>
+          Programas de formación para agricultores y técnicos en las mejores 
+          prácticas agrícolas y uso de nuevas tecnologías.
+        </p>
+        <ul class="service-features">
+          <li>Talleres prácticos</li>
+          <li>Material educativo</li>
+          <li>Seguimiento continuo</li>
+        </ul>
+        <a href="/contacto" class="service-cta">Inscribirse</a>
+      </div>
+    </div>
+    
+    <div class="services-cta-section">
+      <div class="cta-content">
+        <h3>¿Necesitas una Solución Personalizada?</h3>
+        <p>
+          Nuestro equipo de expertos está listo para analizar tus necesidades 
+          y diseñar una solución a medida para tu proyecto agrícola.
+        </p>
+        <a href="/contacto" class="btn btn-primary">Solicitar Propuesta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #32411C;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: #32411C;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(66, 92, 37, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(66, 92, 37, 0.05);
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(66, 92, 37, 0.15);
+    border-color: rgba(159, 88, 24, 0.2);
+  }
+
+  .service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-soil, .icon-irrigation, .icon-pest, .icon-consulting, .icon-technology, .icon-training {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .icon-soil::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: #425C25;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #425C25;
+  }
+
+  .icon-irrigation::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #9F5818;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #9F5818;
+  }
+
+  .icon-pest::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #B08919;
+    border-radius: 50%;
+  }
+
+  .icon-consulting::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #425C25;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #425C25;
+  }
+
+  .icon-technology::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #9F5818;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #9F5818;
+  }
+
+  .icon-training::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #B08919;
+    border-radius: 2px;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #32411C;
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    color: #32411C;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .service-features li {
+    color: #32411C;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #9F5818;
+    font-weight: bold;
+  }
+
+  .service-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .service-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(66, 92, 37, 0.3);
+  }
+
+  .services-cta-section {
+    background: linear-gradient(135deg, #425C25 0%, #32411C 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #425C25;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      padding: 2rem;
+    }
+
+    .services-cta-section {
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+</style>

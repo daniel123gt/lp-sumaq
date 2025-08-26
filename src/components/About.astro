@@ -1,0 +1,321 @@
+---
+// About section component for SUMAQ AGRO
+---
+
+<section id="nosotros" class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Sobre SUMAQ AGRO</h2>
+      <p class="section-subtitle">
+        Soluciones que respetan la tierra, nutren el futuro
+      </p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <div class="about-section">
+          <h3>Nuestra Historia</h3>
+          <p>
+            Tras años de experiencia profesional en el sector agrícola, Susan Gómez decidió 
+            crear SUMAQ AGRO: una empresa que une tecnología, respeto ambiental y empatía humana. 
+            Desde 2009, hemos estado comprometidos con la transformación del sector agrícola 
+            peruano hacia un modelo más justo, sano y sostenible.
+          </p>
+          <p>
+            El nombre "SUMAQ" proviene del quechua y significa "hermoso, bueno, noble", 
+            reflejando nuestra esencia: innovación agrícola con respeto por la Pachamama 
+            (Madre Tierra) y las raíces culturales andinas.
+          </p>
+        </div>
+        
+        <div class="about-section">
+          <h3>Nuestra Misión</h3>
+          <p>
+            Brindar soluciones agrícolas conscientes, adaptadas al campo peruano pero con 
+            visión global. Buscamos nutrir un agro más justo, sano y sostenible, empoderando 
+            a los productores con tecnología de vanguardia y respeto por el medio ambiente.
+          </p>
+        </div>
+        
+        <div class="about-section">
+          <h3>Nuestra Visión</h3>
+          <p>
+            Ser líderes en la transformación del sector agrícola hacia la sostenibilidad, 
+            inspirando a otras empresas a adoptar prácticas responsables y respetuosas 
+            con la Madre Naturaleza.
+          </p>
+        </div>
+        
+        <div class="about-section">
+          <h3>Nuestros Valores</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-icon">🌱</div>
+              <h4>Sostenibilidad</h4>
+              <p>Cada decisión respeta y protege el medio ambiente</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🏔️</div>
+              <h4>Raíces Andinas</h4>
+              <p>Honramos la sabiduría ancestral de la tierra</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">💚</div>
+              <h4>Empatía Humana</h4>
+              <p>Ponemos a las personas y sus necesidades primero</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🔬</div>
+              <h4>Innovación</h4>
+              <p>Buscamos constantemente mejores soluciones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-visual">
+        <div class="founder-card">
+          <div class="founder-image">
+            <div class="founder-icon">👩‍🌾</div>
+          </div>
+          <div class="founder-info">
+            <h4>Susan Gómez Plasencia</h4>
+            <p class="founder-title">Fundadora y CEO</p>
+            <p class="founder-description">
+              "Cuidamos la Pachamama, sembramos con sentido. Nuestros productos nacen 
+              con propósito: cuidar la tierra, empoderar al productor y respetar el futuro."
+            </p>
+          </div>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">2009</span>
+            <span class="stat-label">Año de Fundación</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Perú</span>
+            <span class="stat-label">Origen Andino</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #32411C;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: #32411C;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-section {
+    margin-bottom: 3rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #425C25;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .about-section h3::before {
+    content: '';
+    width: 4px;
+    height: 25px;
+    background: linear-gradient(135deg, #9F5818 0%, #B08919 100%);
+    border-radius: 2px;
+  }
+
+  .about-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #32411C;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .value-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(66, 92, 37, 0.1);
+    border: 1px solid rgba(66, 92, 37, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(66, 92, 37, 0.15);
+  }
+
+  .value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .value-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #425C25;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-item p {
+    font-size: 0.9rem;
+    color: #32411C;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  .about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .founder-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(66, 92, 37, 0.1);
+    border: 1px solid rgba(66, 92, 37, 0.05);
+    text-align: center;
+  }
+
+  .founder-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .founder-icon {
+    font-size: 4rem;
+    margin: 0 auto;
+  }
+
+  .founder-info h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #425C25;
+    margin-bottom: 0.5rem;
+  }
+
+  .founder-title {
+    font-size: 1rem;
+    color: #9F5818;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .founder-description {
+    font-size: 0.95rem;
+    color: #32411C;
+    line-height: 1.6;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: linear-gradient(135deg, #425C25 0%, #32411C 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(66, 92, 37, 0.3);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .founder-card {
+      padding: 1.5rem;
+    }
+  }
+</style>

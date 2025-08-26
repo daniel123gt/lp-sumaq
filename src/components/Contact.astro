@@ -1,0 +1,458 @@
+---
+// Contact section component for SUMAQ AGRO
+---
+
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="section-subtitle">
+        Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo de expertos.
+      </p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <div class="icon-location"></div>
+          </div>
+          <h3>Ubicación</h3>
+          <p>
+            Av. Principal 123<br>
+            Zona Industrial<br>
+            Lima, Perú
+          </p>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <div class="icon-phone"></div>
+          </div>
+          <h3>Teléfono</h3>
+          <p>
+            +51 1 234 5678<br>
+            +51 1 234 5679
+          </p>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <div class="icon-email"></div>
+          </div>
+          <h3>Email</h3>
+          <p>
+            info@sumaqagro.com<br>
+            ventas@sumaqagro.com
+          </p>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <div class="icon-time"></div>
+          </div>
+          <h3>Horario de Atención</h3>
+          <p>
+            Lunes - Viernes: 8:00 AM - 6:00 PM<br>
+            Sábados: 9:00 AM - 1:00 PM
+          </p>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Envíanos un Mensaje</h3>
+        <form class="form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nombre Completo *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Empresa</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Servicio de Interés</label>
+            <select id="service" name="service">
+              <option value="">Selecciona un servicio</option>
+              <option value="analisis-suelos">Análisis de Suelos</option>
+              <option value="sistemas-riego">Sistemas de Riego</option>
+              <option value="manejo-plagas">Manejo de Plagas</option>
+              <option value="consultoria">Consultoría Agrícola</option>
+              <option value="tecnologia">Tecnología Agrícola</option>
+              <option value="capacitacion">Capacitación</option>
+              <option value="productos">Productos</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Mensaje *</label>
+            <textarea id="message" name="message" rows="5" required 
+                      placeholder="Cuéntanos sobre tu proyecto o consulta..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Enviar Mensaje</span>
+            <span class="btn-loading">Enviando...</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="map-section">
+      <h3>Nuestra Ubicación</h3>
+      <div class="map-placeholder">
+        <div class="map-content">
+          <div class="map-icon"></div>
+          <p>Mapa interactivo de ubicación</p>
+          <span>Av. Principal 123, Zona Industrial, Lima, Perú</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #32411C;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: #32411C;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(66, 92, 37, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .info-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-location, .icon-phone, .icon-email, .icon-time {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .icon-location::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #425C25;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #425C25;
+  }
+
+  .icon-phone::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #9F5818;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #9F5818;
+  }
+
+  .icon-email::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #B08919;
+    border-radius: 2px;
+  }
+
+  .icon-time::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #425C25;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #425C25;
+  }
+
+  .info-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #32411C;
+    margin-bottom: 1rem;
+  }
+
+  .info-card p {
+    color: #32411C;
+    opacity: 0.8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(66, 92, 37, 0.1);
+  }
+
+  .contact-form h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #32411C;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #32411C;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(66, 92, 37, 0.1);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: #f8f9fa;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #9F5818;
+    background: white;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66, 92, 37, 0.3);
+  }
+
+  .btn-loading {
+    display: none;
+  }
+
+  .submit-btn.loading .btn-text {
+    display: none;
+  }
+
+  .submit-btn.loading .btn-loading {
+    display: inline;
+  }
+
+  .map-section {
+    text-align: center;
+  }
+
+  .map-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #32411C;
+    margin-bottom: 2rem;
+  }
+
+  .map-placeholder {
+    background: linear-gradient(135deg, #425C25 0%, #32411C 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+  }
+
+  .map-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .map-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .map-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #425C25;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #425C25;
+  }
+
+  .map-content p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .map-content span {
+    opacity: 0.9;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .contact-info {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+      padding: 2rem;
+    }
+
+    .map-placeholder {
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Form handling
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = contactForm?.querySelector('.submit-btn');
+
+  contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (submitBtn) {
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+    }
+
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Show success message (in a real app, you'd handle the actual submission)
+    alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+
+    if (submitBtn) {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+
+    contactForm.reset();
+  });
+</script>

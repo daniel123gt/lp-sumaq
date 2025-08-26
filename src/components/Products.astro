@@ -1,0 +1,371 @@
+---
+// Products section component for SUMAQ AGRO
+---
+
+<section id="productos" class="products">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <p class="section-subtitle">
+        Soluciones de alta calidad diseñadas para maximizar el rendimiento de tus cultivos
+      </p>
+    </div>
+    
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <div class="product-icon fertilizer"></div>
+        </div>
+        <div class="product-content">
+          <h3>Fertilizantes Orgánicos</h3>
+          <p>
+            Fertilizantes 100% orgánicos elaborados con materia prima de la más alta 
+            calidad, libres de químicos sintéticos y certificados para agricultura orgánica.
+          </p>
+          <div class="product-features">
+            <span class="feature-tag">100% Orgánico</span>
+            <span class="feature-tag">Certificado</span>
+            <span class="feature-tag">Sostenible</span>
+          </div>
+          <a href="/contacto" class="product-cta">Solicitar Cotización</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">
+          <div class="product-icon seeds"></div>
+        </div>
+        <div class="product-content">
+          <h3>Semillas Certificadas</h3>
+          <p>
+            Semillas de alta calidad con certificación internacional, seleccionadas 
+            para maximizar el rendimiento y la resistencia a enfermedades.
+          </p>
+          <div class="product-features">
+            <span class="feature-tag">Alta Germinación</span>
+            <span class="feature-tag">Resistente</span>
+            <span class="feature-tag">Certificado</span>
+          </div>
+          <a href="/contacto" class="product-cta">Ver Catálogo</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">
+          <div class="product-icon biopesticides"></div>
+        </div>
+        <div class="product-content">
+          <h3>Biopesticidas</h3>
+          <p>
+            Soluciones naturales para el control de plagas y enfermedades, 
+            efectivas y respetuosas con el medio ambiente y la salud humana.
+          </p>
+          <div class="product-features">
+            <span class="feature-tag">Natural</span>
+            <span class="feature-tag">Efectivo</span>
+            <span class="feature-tag">Ecológico</span>
+          </div>
+          <a href="/contacto" class="product-cta">Consultar Stock</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">
+          <div class="product-icon equipment"></div>
+        </div>
+        <div class="product-content">
+          <h3>Equipos de Precisión</h3>
+          <p>
+            Tecnología de vanguardia para agricultura de precisión: sensores, 
+            drones y sistemas de monitoreo para optimizar cada aspecto de tu cultivo.
+          </p>
+          <div class="product-features">
+            <span class="feature-tag">Tecnología</span>
+            <span class="feature-tag">Precisión</span>
+            <span class="feature-tag">Innovación</span>
+          </div>
+          <a href="/contacto" class="product-cta">Solicitar Demo</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="products-cta">
+      <div class="cta-content">
+        <h3>¿Buscas un Producto Específico?</h3>
+        <p>
+          Nuestro catálogo incluye más de 200 productos. Si no encuentras lo que 
+          necesitas, nuestro equipo puede ayudarte a encontrar la solución perfecta.
+        </p>
+        <div class="cta-actions">
+          <a href="/contacto" class="btn btn-primary">Contactar Asesor</a>
+          <a href="/contacto" class="btn btn-secondary">Descargar Catálogo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .products {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #32411C;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: #32411C;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(66, 92, 37, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(66, 92, 37, 0.05);
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(66, 92, 37, 0.15);
+  }
+
+  .product-image {
+    height: 200px;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .product-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .fertilizer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #425C25;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #425C25;
+  }
+
+  .seeds::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: #9F5818;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #9F5818;
+  }
+
+  .biopesticides::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background: #B08919;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #B08919;
+  }
+
+  .equipment::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #425C25;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #425C25;
+  }
+
+  .product-content {
+    padding: 2rem;
+  }
+
+  .product-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #32411C;
+    margin-bottom: 1rem;
+  }
+
+  .product-content p {
+    color: #32411C;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-features {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .feature-tag {
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .product-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .product-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(66, 92, 37, 0.3);
+  }
+
+  .products-cta {
+    background: linear-gradient(135deg, #425C25 0%, #32411C 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #425C25;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #425C25;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .product-card {
+      margin-bottom: 2rem;
+    }
+
+    .products-cta {
+      padding: 2rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+</style>
