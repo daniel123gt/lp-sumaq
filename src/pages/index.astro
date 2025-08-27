@@ -1,12 +1,12 @@
 ---
 // Página principal para SUMAQ AGRO
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Services from '../components/Services.astro';
-import Products from '../components/Products.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Products from "../components/Products.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="es">
@@ -15,42 +15,68 @@ import Footer from '../components/Footer.astro';
 		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- SEO Meta Tags -->
-		<title>SUMAQ AGRO - Innovación Agrícola Sostenible | Análisis de Suelos, Sistemas de Riego</title>
-		<meta name="description" content="SUMAQ AGRO lidera la transformación del sector agrícola con soluciones innovadoras y sostenibles. Análisis de suelos, sistemas de riego, manejo de plagas y más." />
-		<meta name="keywords" content="agricultura sostenible, análisis de suelos, sistemas de riego, manejo de plagas, consultoría agrícola, tecnología agrícola, fertilizantes orgánicos" />
+		<title>
+			SUMAQ AGRO - Innovación Agrícola Sostenible | Análisis de Suelos,
+			Sistemas de Riego
+		</title>
+		<meta
+			name="description"
+			content="SUMAQ AGRO lidera la transformación del sector agrícola con soluciones innovadoras y sostenibles. Análisis de suelos, sistemas de riego, manejo de plagas y más."
+		/>
+		<meta
+			name="keywords"
+			content="agricultura sostenible, análisis de suelos, sistemas de riego, manejo de plagas, consultoría agrícola, tecnología agrícola, fertilizantes orgánicos"
+		/>
 		<meta name="author" content="SUMAQ AGRO" />
-		
+
 		<!-- Open Graph Meta Tags -->
-		<meta property="og:title" content="SUMAQ AGRO - Innovación Agrícola Sostenible" />
-		<meta property="og:description" content="Soluciones innovadoras y sostenibles para el sector agrícola. Análisis de suelos, sistemas de riego y más." />
+		<meta
+			property="og:title"
+			content="SUMAQ AGRO - Innovación Agrícola Sostenible"
+		/>
+		<meta
+			property="og:description"
+			content="Soluciones innovadoras y sostenibles para el sector agrícola. Análisis de suelos, sistemas de riego y más."
+		/>
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://sumaqagro.com" />
 		<meta property="og:image" content="/og-image.jpg" />
-		
+
 		<!-- Twitter Card Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="SUMAQ AGRO - Innovación Agrícola Sostenible" />
-		<meta name="twitter:description" content="Soluciones innovadoras y sostenibles para el sector agrícola." />
-		
+		<meta
+			name="twitter:title"
+			content="SUMAQ AGRO - Innovación Agrícola Sostenible"
+		/>
+		<meta
+			name="twitter:description"
+			content="Soluciones innovadoras y sostenibles para el sector agrícola."
+		/>
+
 		<!-- Preconnect to external resources -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
+
 		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-		
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
+
 		<!-- Global Styles -->
 		<link rel="stylesheet" href="/global.css" />
 	</head>
 	<body>
 		<!-- Header -->
 		<Header />
-		
+
 		<!-- Hero Section -->
 		<Hero />
-		
+
 		<!-- About Section (Resumida) -->
 		<section class="home-about">
 			<div class="container">
@@ -61,8 +87,10 @@ import Footer from '../components/Footer.astro';
 				<div class="about-preview">
 					<div class="about-content">
 						<p>
-							Tras años de experiencia profesional en el sector agrícola, Susan Gómez decidió 
-							crear SUMAQ AGRO: una empresa que une tecnología, respeto ambiental y empatía humana.
+							Tras años de experiencia profesional en el sector
+							agrícola, Susan Gómez decidió crear SUMAQ AGRO: una
+							empresa que une tecnología, respeto ambiental y
+							empatía humana.
 						</p>
 						<div class="about-highlights">
 							<div class="highlight-item">
@@ -78,7 +106,9 @@ import Footer from '../components/Footer.astro';
 								<span>Empatía Humana</span>
 							</div>
 						</div>
-						<a href="/nosotros" class="btn btn-outline">Conoce Nuestra Historia</a>
+						<a href="/nosotros" class="btn btn-outline"
+							>Conoce Nuestra Historia</a
+						>
 					</div>
 					<div class="about-image">
 						<div class="founder-preview">
@@ -91,26 +121,33 @@ import Footer from '../components/Footer.astro';
 			</div>
 		</section>
 
-
-
 		<!-- Blog Section (Resumida) -->
 		<section class="home-blog">
 			<div class="container">
 				<div class="section-header">
 					<h2>Últimas Noticias y Consejos</h2>
-					<p>Mantente informado sobre las últimas tendencias agrícolas</p>
+					<p>
+						Mantente informado sobre las últimas tendencias
+						agrícolas
+					</p>
 				</div>
 				<div class="blog-preview">
 					<div class="blog-preview-card">
 						<div class="blog-image">📰</div>
 						<h3>Innovaciones en Agricultura Sostenible</h3>
-						<p>Descubre las últimas tecnologías que están transformando el sector</p>
+						<p>
+							Descubre las últimas tecnologías que están
+							transformando el sector
+						</p>
 						<span class="blog-date">Hace 2 días</span>
 					</div>
 					<div class="blog-preview-card">
 						<div class="blog-image">🌿</div>
 						<h3>Guía de Cultivos Orgánicos</h3>
-						<p>Consejos prácticos para iniciar tu huerto orgánico en casa</p>
+						<p>
+							Consejos prácticos para iniciar tu huerto orgánico
+							en casa
+						</p>
 						<span class="blog-date">Hace 1 semana</span>
 					</div>
 					<div class="blog-preview-card">
@@ -122,12 +159,17 @@ import Footer from '../components/Footer.astro';
 					<div class="blog-preview-card">
 						<div class="blog-image">💡</div>
 						<h3>Tips para Principiantes</h3>
-						<p>Todo lo que necesitas saber para empezar en la agricultura</p>
+						<p>
+							Todo lo que necesitas saber para empezar en la
+							agricultura
+						</p>
 						<span class="blog-date">Hace 3 semanas</span>
 					</div>
 				</div>
 				<div class="blog-cta">
-					<a href="/blog" class="btn btn-primary">Leer Más Artículos</a>
+					<a href="/blog" class="btn btn-primary"
+						>Leer Más Artículos</a
+					>
 				</div>
 			</div>
 		</section>
@@ -137,7 +179,9 @@ import Footer from '../components/Footer.astro';
 			<div class="container">
 				<div class="section-header">
 					<h2>Productos Destacados</h2>
-					<p>Soluciones de alta calidad para maximizar tu rendimiento</p>
+					<p>
+						Soluciones de alta calidad para maximizar tu rendimiento
+					</p>
 				</div>
 				<div class="products-preview">
 					<div class="product-preview-card">
@@ -162,7 +206,9 @@ import Footer from '../components/Footer.astro';
 					</div>
 				</div>
 				<div class="products-cta">
-					<a href="/productos" class="btn btn-primary">Ver Catálogo Completo</a>
+					<a href="/productos" class="btn btn-primary"
+						>Ver Catálogo Completo</a
+					>
 				</div>
 			</div>
 		</section>
@@ -170,8 +216,10 @@ import Footer from '../components/Footer.astro';
 		<!-- Contact Section (Resumida) -->
 		<section class="home-contact">
 			<div class="container">
-				<div class="section-header" >
-					<h2 style="color: white !important;">¿Listo para Empezar?</h2>
+				<div class="section-header">
+					<h2 style="color: white !important;">
+						¿Listo para Empezar?
+					</h2>
 					<p>Estamos aquí para ayudarte en tu proyecto agrícola</p>
 				</div>
 				<div class="contact-preview">
@@ -190,8 +238,12 @@ import Footer from '../components/Footer.astro';
 						</div>
 					</div>
 					<div class="contact-actions">
-						<a href="/contacto" class="btn btn-primary">Contáctanos</a>
-						<a href="/contacto" class="btn btn-outline">Solicitar Cotización</a>
+						<a href="/contacto" class="btn btn-primary"
+							>Contáctanos</a
+						>
+						<a href="/contacto" class="btn btn-outline"
+							>Solicitar Cotización</a
+						>
 					</div>
 				</div>
 			</div>
@@ -199,39 +251,42 @@ import Footer from '../components/Footer.astro';
 
 		<!-- Footer -->
 		<Footer />
-		
+
 		<!-- Smooth Scrolling Script -->
 		<script>
 			// Smooth scrolling for anchor links
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', (e: Event) => {
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", (e: Event) => {
 					e.preventDefault();
-					const target = document.querySelector((anchor as HTMLAnchorElement).getAttribute('href') || '');
+					const target = document.querySelector(
+						(anchor as HTMLAnchorElement).getAttribute("href") ||
+							"",
+					);
 					if (target) {
 						target.scrollIntoView({
-							behavior: 'smooth',
-							block: 'start'
+							behavior: "smooth",
+							block: "start",
 						});
 					}
 				});
 			});
-			
+
 			// Intersection Observer for animations
 			const observerOptions = {
 				threshold: 0.1,
-				rootMargin: '0px 0px -50px 0px'
+				rootMargin: "0px 0px -50px 0px",
 			};
-			
+
 			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
+				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						entry.target.classList.add('fade-in-up');
+						entry.target.classList.add("fade-in-up");
 					}
 				});
 			}, observerOptions);
-			
+
 			// Observe all sections for animation
-			document.querySelectorAll('section').forEach(section => {
+			document.querySelectorAll("section").forEach((section) => {
 				observer.observe(section);
 			});
 		</script>
