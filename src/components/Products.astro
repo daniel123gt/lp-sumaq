@@ -1,112 +1,210 @@
 ---
-// Products section component for SUMAQ AGRO
+// Componente de Productos para SUMAQ AGRO
 ---
 
-<section id="productos" class="products">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <p class="section-subtitle">
-        Soluciones de alta calidad diseñadas para maximizar el rendimiento de tus cultivos
-      </p>
-    </div>
-    
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-image">
-          <div class="product-icon fertilizer"></div>
-        </div>
-        <div class="product-content">
-          <h3>Fertilizantes Orgánicos</h3>
-          <p>
-            Fertilizantes 100% orgánicos elaborados con materia prima de la más alta 
-            calidad, libres de químicos sintéticos y certificados para agricultura orgánica.
-          </p>
-          <div class="product-features">
-            <span class="feature-tag">100% Orgánico</span>
-            <span class="feature-tag">Certificado</span>
-            <span class="feature-tag">Sostenible</span>
-          </div>
-          <a href="/contacto" class="product-cta">Solicitar Cotización</a>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-image">
-          <div class="product-icon seeds"></div>
-        </div>
-        <div class="product-content">
-          <h3>Semillas Certificadas</h3>
-          <p>
-            Semillas de alta calidad con certificación internacional, seleccionadas 
-            para maximizar el rendimiento y la resistencia a enfermedades.
-          </p>
-          <div class="product-features">
-            <span class="feature-tag">Alta Germinación</span>
-            <span class="feature-tag">Resistente</span>
-            <span class="feature-tag">Certificado</span>
-          </div>
-          <a href="/contacto" class="product-cta">Ver Catálogo</a>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-image">
-          <div class="product-icon biopesticides"></div>
-        </div>
-        <div class="product-content">
-          <h3>Biopesticidas</h3>
-          <p>
-            Soluciones naturales para el control de plagas y enfermedades, 
-            efectivas y respetuosas con el medio ambiente y la salud humana.
-          </p>
-          <div class="product-features">
-            <span class="feature-tag">Natural</span>
-            <span class="feature-tag">Efectivo</span>
-            <span class="feature-tag">Ecológico</span>
-          </div>
-          <a href="/contacto" class="product-cta">Consultar Stock</a>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-image">
-          <div class="product-icon equipment"></div>
-        </div>
-        <div class="product-content">
-          <h3>Equipos de Precisión</h3>
-          <p>
-            Tecnología de vanguardia para agricultura de precisión: sensores, 
-            drones y sistemas de monitoreo para optimizar cada aspecto de tu cultivo.
-          </p>
-          <div class="product-features">
-            <span class="feature-tag">Tecnología</span>
-            <span class="feature-tag">Precisión</span>
-            <span class="feature-tag">Innovación</span>
-          </div>
-          <a href="/contacto" class="product-cta">Solicitar Demo</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="products-cta">
-      <div class="cta-content">
-        <h3>¿Buscas un Producto Específico?</h3>
-        <p>
-          Nuestro catálogo incluye más de 200 productos. Si no encuentras lo que 
-          necesitas, nuestro equipo puede ayudarte a encontrar la solución perfecta.
-        </p>
-        <div class="cta-actions">
-          <a href="/contacto" class="btn btn-primary">Contactar Asesor</a>
-          <a href="/contacto" class="btn btn-secondary">Descargar Catálogo</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="products-section">
+	<div class="container">
+		<div class="section-header">
+			<h2>Nuestros Productos</h2>
+			<p>Soluciones de alta calidad diseñadas para maximizar el rendimiento de tus cultivos</p>
+		</div>
+
+		<!-- BIOENERGIZANTES -->
+		<div class="product-category">
+			<h3 class="category-title">🌱 BIOENERGIZANTES</h3>
+			<p class="category-description">Productos biológicos que nutren, desintoxican y protegen tus plantas del estrés</p>
+			
+			<div class="products-grid">
+				<div class="product-card">
+					<div class="product-image">🌊</div>
+					<div class="product-content">
+						<h4>Booster</h4>
+						<p>Revitalizador biológico a base de algas marinas seleccionadas para nutrir, desintoxicar y proteger tus plantas del estrés.</p>
+						<div class="product-features">
+							<span class="feature-tag">Revitalizador</span>
+							<span class="feature-tag">Algas Marinas</span>
+							<span class="feature-tag">Desintoxicante</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">🌿</div>
+					<div class="product-content">
+						<h4>ROOT</h4>
+						<p>Bioestimulante y activador radicular con un complejo de antioxidantes que promueve el crecimiento y desarrollo saludable de las raíces.</p>
+						<div class="product-features">
+							<span class="feature-tag">Bioestimulante</span>
+							<span class="feature-tag">Activador Radicular</span>
+							<span class="feature-tag">Antioxidantes</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">⚡</div>
+					<div class="product-content">
+						<h4>ME</h4>
+						<p>Microelementos esenciales, formulados a la medida y complejados con algas, para complementar y fortalecer la nutrición de tus cultivos.</p>
+						<div class="product-features">
+							<span class="feature-tag">Microelementos</span>
+							<span class="feature-tag">Formulado a Medida</span>
+							<span class="feature-tag">Complejado con Algas</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">💎</div>
+					<div class="product-content">
+						<h4>PAM</h4>
+						<p>Biorevitalizador que, gracias a sus agentes complejantes, optimiza la nutrición del suelo y aumenta la absorción de nutrientes mediante una potente estimulación radicular.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biorevitalizador</span>
+							<span class="feature-tag">Agentes Complejantes</span>
+							<span class="feature-tag">Estimulación Radicular</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- BIOCATALIZADORES -->
+		<div class="product-category">
+			<h3 class="category-title">🔬 BIOCATALIZADORES</h3>
+			<p class="category-description">Catalizadores biológicos que aceleran y optimizan procesos naturales en tus cultivos</p>
+			
+			<div class="products-grid">
+				<div class="product-card">
+					<div class="product-image">🌳</div>
+					<div class="product-content">
+						<h4>Arbolina</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biocatalizador</span>
+							<span class="feature-tag">Optimización</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">✨</div>
+					<div class="product-content">
+						<h4>SILKRON</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biocatalizador</span>
+							<span class="feature-tag">Aceleración</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">⚡</div>
+					<div class="product-content">
+						<h4>ACTIGEN</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biocatalizador</span>
+							<span class="feature-tag">Activación</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">☀️</div>
+					<div class="product-content">
+						<h4>SOLAR SHIELD</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biocatalizador</span>
+							<span class="feature-tag">Protección</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- BIOCIDAS -->
+		<div class="product-category">
+			<h3 class="category-title">🦠 BIOCIDAS</h3>
+			<p class="category-description">Soluciones biológicas para el control efectivo de plagas y enfermedades</p>
+			
+			<div class="products-grid">
+				<div class="product-card">
+					<div class="product-image">🛡️</div>
+					<div class="product-content">
+						<h4>Biocomplex</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biocida</span>
+							<span class="feature-tag">Control de Plagas</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">🔬</div>
+					<div class="product-content">
+						<h4>Carboxygram Zn</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Biocida</span>
+							<span class="feature-tag">Zinc</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PRODUCTOS ESPECIALIZADOS -->
+		<div class="product-category">
+			<h3 class="category-title">🌟 PRODUCTOS ESPECIALIZADOS</h3>
+			<p class="category-description">Soluciones únicas para necesidades específicas de tus cultivos</p>
+			
+			<div class="products-grid">
+				<div class="product-card">
+					<div class="product-image">🌍</div>
+					<div class="product-content">
+						<h4>Georegenerador</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Especializado</span>
+							<span class="feature-tag">Regeneración</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-card">
+					<div class="product-image">💎</div>
+					<div class="product-content">
+						<h4>Diatomaq</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<div class="product-features">
+							<span class="feature-tag">Especializado</span>
+							<span class="feature-tag">Diatomeas</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CTA Section -->
+		<div class="products-cta">
+			<div class="cta-content">
+				<h3>¿Necesitas asesoría sobre nuestros productos?</h3>
+				<p>Nuestro equipo de expertos está listo para ayudarte a elegir la mejor solución para tus cultivos</p>
+				<div class="cta-buttons">
+					<a href="/contacto" class="btn btn-primary">Solicitar Cotización</a>
+					<a href="/contacto" class="btn btn-outline">Contactar Asesor</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
-  .products {
+  .products-section {
     padding: 6rem 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   }
@@ -122,7 +220,7 @@
     margin-bottom: 4rem;
   }
 
-  .section-title {
+  .section-header h2 {
     font-size: 3rem;
     font-weight: 800;
     color: #32411C;
@@ -133,7 +231,7 @@
     background-clip: text;
   }
 
-  .section-subtitle {
+  .section-header p {
     font-size: 1.25rem;
     color: #32411C;
     opacity: 0.8;
@@ -141,11 +239,35 @@
     margin: 0 auto;
   }
 
+  .product-category {
+    margin-bottom: 4rem;
+  }
+
+  .category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #32411C;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .category-description {
+    font-size: 1.1rem;
+    color: #32411C;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 2rem;
-    margin-bottom: 4rem;
   }
 
   .product-card {
@@ -171,71 +293,39 @@
     position: relative;
   }
 
-  .product-icon {
+  .product-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
     background: white;
-    border-radius: 20px;
-    position: relative;
-  }
-
-  .fertilizer::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: #425C25;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px #425C25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #425C25;
   }
 
-  .seeds::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background: #9F5818;
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px #9F5818;
-  }
-
-  .biopesticides::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 35px;
-    height: 35px;
-    background: #B08919;
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px #B08919;
-  }
-
-  .equipment::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: #425C25;
-    border-radius: 2px;
-    box-shadow: 0 0 0 2px #425C25;
-  }
+  .product-image.🌊::before { content: '🌊'; }
+  .product-image.🌿::before { content: '🌿'; }
+  .product-image.⚡::before { content: '⚡'; }
+  .product-image.💎::before { content: '💎'; }
+  .product-image.🌳::before { content: '🌳'; }
+  .product-image.✨::before { content: '✨'; }
+  .product-image.☀️::before { content: '☀️'; }
+  .product-image.🛡️::before { content: '🛡️'; }
+  .product-image.🔬::before { content: '🔬'; }
+  .product-image.🌍::before { content: '🌍'; }
 
   .product-content {
     padding: 2rem;
   }
 
-  .product-content h3 {
+  .product-content h4 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #32411C;
@@ -305,7 +395,7 @@
     margin-right: auto;
   }
 
-  .cta-actions {
+  .cta-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -334,13 +424,13 @@
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
   }
 
-  .btn-secondary {
+  .btn-outline {
     background: transparent;
     color: white;
     border-color: white;
   }
 
-  .btn-secondary:hover {
+  .btn-outline:hover {
     background: white;
     color: #425C25;
     transform: translateY(-2px);
@@ -359,12 +449,12 @@
       padding: 2rem;
     }
 
-    .cta-actions {
+    .cta-buttons {
       flex-direction: column;
       align-items: center;
     }
 
-    .section-title {
+    .section-header h2 {
       font-size: 2.5rem;
     }
   }
