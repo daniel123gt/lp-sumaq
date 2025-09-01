@@ -3,17 +3,35 @@
 ---
 
 <section id="inicio" class="hero">
-  <div class="hero-background">
+  <div class="hero-carousel">
+    <div class="carousel-slide active" style="background-image: url('/hero/hero1.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('/hero/hero2.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('/hero/hero3.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('/hero/hero4.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('/hero/hero5.jpg')"></div>
+    
     <div class="overlay"></div>
     <div class="geometric-pattern"></div>
+    
+    <!-- Indicadores del carrusel -->
+    <div class="carousel-indicators">
+      <button class="indicator active" data-slide="0"></button>
+      <button class="indicator" data-slide="1"></button>
+      <button class="indicator" data-slide="2"></button>
+      <button class="indicator" data-slide="3"></button>
+      <button class="indicator" data-slide="4"></button>
+    </div>
   </div>
   
   <div class="container">
     <div class="hero-content">
       
       <h1 class="hero-title">
-        <span class="title-line">Honramos a la madre Naturaleza y transformamos su belleza en propósito
+        <span class="title-line">Honramos a la madre Naturaleza
         </span>
+        <span class="title-line hero-subtitle"> y transformamos su belleza en propósito
+        </span>
+
       </h1>
       
       
@@ -44,16 +62,30 @@
     padding-top: 100px;
   }
 
-  .hero-background {
+  .hero-carousel {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/hero-bg.jpg');
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
   }
 
   .overlay {
@@ -63,6 +95,7 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(45deg, rgba(50, 65, 28, 0.7) 0%, rgba(66, 92, 37, 0.6) 50%, rgba(159, 88, 24, 0.5) 100%);
+    z-index: 1;
   }
 
   .geometric-pattern {
@@ -75,6 +108,36 @@
       radial-gradient(circle at 20% 80%, rgba(176, 137, 25, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(66, 92, 37, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 40% 40%, rgba(159, 88, 24, 0.05) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 3;
+  }
+
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .indicator.active {
+    background: #ffffff;
+    border-color: #ffffff;
+  }
+
+  .indicator:hover {
+    background: rgba(255, 255, 255, 0.7);
   }
 
   .container {
@@ -108,8 +171,17 @@
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 7vw, 4rem);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+    font-weight: 400;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: #ffffff;
@@ -149,8 +221,6 @@
     font-weight: 600;
   }
 
-
-
   .hero-actions {
     display: flex;
     gap: 1.5rem;
@@ -187,7 +257,6 @@
   }
 
   .btn-secondary:hover {
-    
     transform: translateY(-2px);
   }
 
@@ -300,5 +369,67 @@
     .hero-slogan {
       text-align: center;
     }
+
+    .carousel-indicators {
+      bottom: 1rem;
+    }
   }
 </style>
+
+<script>
+  // Carrusel automático del hero
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    let interval;
+
+    function showSlide(index) {
+      // Ocultar todas las slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      // Mostrar la slide actual
+      slides[index].classList.add('active');
+      indicators[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+      interval = setTimeout(() => {
+        nextSlide();
+        startCarousel(); // Recursivo para continuar el ciclo
+      }, 3000); // Cambiar cada 3 segundos
+    }
+
+    function stopCarousel() {
+      if (interval) {
+        clearTimeout(interval);
+      }
+    }
+
+    // Event listeners para los indicadores
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        stopCarousel();
+        startCarousel(); // Reiniciar el timer
+      });
+    });
+
+    // Pausar el carrusel cuando el usuario hace hover
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      hero.addEventListener('mouseenter', stopCarousel);
+      hero.addEventListener('mouseleave', startCarousel);
+    }
+
+    // Iniciar el carrusel
+    startCarousel();
+  });
+</script>

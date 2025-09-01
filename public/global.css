@@ -275,6 +275,35 @@ body {
 .product-image {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Para productos con emojis en el home (sin imagen real) */
+.product-image:not(:has(img)) {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  box-shadow: 0 4px 15px rgba(66, 92, 37, 0.2);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: none;
+  box-shadow: none;
+}
+
+/* Cuando hay imagen real en el home, quitar el fondo y sombra */
+.product-image:has(img) {
+  background: none;
+  box-shadow: none;
+  border: none;
 }
 
 .product-preview-card h3 {
@@ -752,16 +781,37 @@ body {
 
 /* Product Image Icons */
 .product-image {
-	width: 120px;
-	height: 120px;
-	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+	width: 150px;
+	height: 150px;
 	border-radius: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 3rem;
 	margin: 0 auto 1rem;
+	overflow: hidden;
+}
+
+/* Para productos con emojis (sin imagen real) */
+.product-image:not(:has(img)) {
+	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 	box-shadow: 0 8px 25px rgba(66, 92, 37, 0.2);
+}
+
+.product-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+	background: none;
+	box-shadow: none;
+}
+
+/* Cuando hay imagen real, quitar el fondo y sombra del contenedor */
+.product-image:has(img) {
+	background: none;
+	box-shadow: none;
+	border: none;
 }
 
 /* Products CTA Section */
