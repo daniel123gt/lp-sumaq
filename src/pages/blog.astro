@@ -1,6 +1,7 @@
 ---
 // Página de Blog para SUMAQ AGRO
 import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -10,46 +11,12 @@ const featuredPost = sortedPosts.find(post => post.data.featured);
 const otherPosts = sortedPosts.filter(post => !post.data.featured);
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- SEO Meta Tags -->
-		<title>Blog - SUMAQ AGRO | Noticias y Consejos Agrícolas</title>
-		<meta name="description" content="Mantente informado sobre las últimas tendencias agrícolas, consejos de cultivo y noticias del sector con SUMAQ AGRO." />
-		<meta name="keywords" content="blog agrícola, consejos de cultivo, agricultura sostenible, noticias agrícolas, tips de jardinería" />
-		<meta name="author" content="SUMAQ AGRO" />
-		
-		<!-- Open Graph Meta Tags -->
-		<meta property="og:title" content="Blog - SUMAQ AGRO | Noticias y Consejos Agrícolas" />
-		<meta property="og:description" content="Mantente informado sobre las últimas tendencias agrícolas y consejos de cultivo." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://sumaqagro.com/blog" />
-		<meta property="og:image" content="/og-image.jpg" />
-		
-		<!-- Twitter Card Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Blog - SUMAQ AGRO | Noticias y Consejos Agrícolas" />
-		<meta name="twitter:description" content="Mantente informado sobre las últimas tendencias agrícolas." />
-		
-		<!-- Preconnect to external resources -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Global Styles -->
-		<link rel="stylesheet" href="/global.css" />
-	</head>
-	<body>
+<BaseLayout
+	title="Blog | SUMAQ AGRO"
+	description="Descubre artículos, consejos y noticias sobre agricultura sostenible, productos biológicos y mejores prácticas agrícolas."
+	keywords="blog agrícola, consejos agricultura, productos biológicos, agricultura sostenible, SUMAQ AGRO"
+	ogImage="/products/DIATOMAQ.png"
+>
 		<!-- Header -->
 		<Header />
 		
@@ -199,5 +166,4 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 				observer.observe(section);
 			});
 		</script>
-	</body>
-</html>
+</BaseLayout>

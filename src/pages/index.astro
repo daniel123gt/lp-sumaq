@@ -1,76 +1,20 @@
 ---
 // Página principal para SUMAQ AGRO
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
-import Services from "../components/Services.astro";
 import Products from "../components/Products.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-
-		<!-- SEO Meta Tags -->
-		<title>
-			SUMAQ AGRO - Innovación Agrícola Sostenible | Análisis de Suelos,
-			Sistemas de Riego
-		</title>
-		<meta
-			name="description"
-			content="SUMAQ AGRO lidera la transformación del sector agrícola con soluciones innovadoras y sostenibles. Análisis de suelos, sistemas de riego, manejo de plagas y más."
-		/>
-		<meta
-			name="keywords"
-			content="agricultura sostenible, análisis de suelos, sistemas de riego, manejo de plagas, consultoría agrícola, tecnología agrícola, fertilizantes orgánicos"
-		/>
-		<meta name="author" content="SUMAQ AGRO" />
-
-		<!-- Open Graph Meta Tags -->
-		<meta
-			property="og:title"
-			content="SUMAQ AGRO - Innovación Agrícola Sostenible"
-		/>
-		<meta
-			property="og:description"
-			content="Soluciones innovadoras y sostenibles para el sector agrícola. Análisis de suelos, sistemas de riego y más."
-		/>
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://sumaqagro.com" />
-		<meta property="og:image" content="/og-image.jpg" />
-
-		<!-- Twitter Card Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="SUMAQ AGRO - Innovación Agrícola Sostenible"
-		/>
-		<meta
-			name="twitter:description"
-			content="Soluciones innovadoras y sostenibles para el sector agrícola."
-		/>
-
-		<!-- Preconnect to external resources -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
-			rel="stylesheet"
-		/>
-
-		<!-- Global Styles -->
-		<link rel="stylesheet" href="/global.css" />
-	</head>
-	<body>
+<BaseLayout
+	title="SUMAQ AGRO - Productos Biológicos para Agricultura Sostenible"
+	description="SUMAQ AGRO ofrece productos biológicos de alta calidad para una agricultura sostenible. Fertilizantes, bioestimulantes y biocatalizadores naturales."
+	keywords="agricultura, productos biológicos, fertilizantes, bioestimulantes, SUMAQ AGRO, agricultura sostenible"
+	ogImage="/products/DIATOMAQ.png"
+>
 		<!-- Header -->
 		<Header />
 
@@ -201,9 +145,11 @@ import Footer from "../components/Footer.astro";
 						<p>Microelementos esenciales complejados</p>
 					</div>
 					<div class="product-preview-card">
-						<div class="product-image">🔬</div>
+						<div class="product-image">
+							<img src="/products/ARBOLINA.png" alt="Arbolina - Activador Fisiológico" />
+						</div>
 						<h3>Arbolina</h3>
-						<p>Biocatalizador para optimización</p>
+						<p>Activador Fisiológico para vitalidad</p>
 					</div>
 				</div>
 				<div class="products-cta">
@@ -291,5 +237,4 @@ import Footer from "../components/Footer.astro";
 				observer.observe(section);
 			});
 		</script>
-	</body>
-</html>
+</BaseLayout>

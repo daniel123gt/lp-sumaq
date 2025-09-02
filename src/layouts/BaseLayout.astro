@@ -1,0 +1,171 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  author?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  keywords = "agricultura, productos biológicos, fertilizantes, bioestimulantes, SUMAQ AGRO",
+  author = "SUMAQ AGRO",
+  ogImage = "/products/DIATOMAQ.png",
+  ogType = "website",
+  canonical = Astro.url.href
+} = Astro.props;
+
+const fullTitle = title.includes("SUMAQ AGRO") ? title : `${title} | SUMAQ AGRO`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="SUMAQ AGRO" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/global.css" />
+    
+    <!-- View Transitions -->
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+    
+    <!-- Smooth Scrolling Script -->
+    <script>
+      // Smooth scrolling for anchor links
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href') || '');
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  /* View Transitions Styles */
+  :root {
+    view-transition-name: root;
+  }
+  
+  /* Smooth transitions for common elements */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.3s;
+  }
+  
+  /* Header transitions */
+  header {
+    view-transition-name: header;
+  }
+  
+  /* Footer transitions */
+  footer {
+    view-transition-name: footer;
+  }
+  
+  /* Hero section transitions */
+  .hero {
+    view-transition-name: hero;
+  }
+  
+  /* Container transitions */
+  .container {
+    view-transition-name: container;
+  }
+  
+  /* Custom transition animations */
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply transitions to specific elements */
+  ::view-transition-old(hero),
+  ::view-transition-new(hero) {
+    animation: slide-in-right 0.3s ease-out;
+  }
+  
+  ::view-transition-old(container),
+  ::view-transition-new(container) {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -15,47 +16,15 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- SEO Meta Tags -->
-		<title>{post.data.title} | Blog SUMAQ AGRO</title>
-		<meta name="description" content={post.data.description} />
-		<meta name="keywords" content={post.data.tags?.join(', ') || ''} />
-		<meta name="author" content={post.data.author} />
-		
-		<!-- Open Graph Meta Tags -->
-		<meta property="og:title" content={post.data.title} />
-		<meta property="og:description" content={post.data.description} />
-		<meta property="og:type" content="article" />
-		<meta property="og:url" content={`https://sumaqagro.com/blog/${post.slug}`} />
-		<meta property="og:image" content={post.data.heroImage} />
-		
-		<!-- Twitter Card Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={post.data.title} />
-		<meta name="twitter:description" content={post.data.description} />
-		<meta name="twitter:image" content={post.data.heroImage} />
-		
-		<!-- Preconnect to external resources -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Global Styles -->
-		<link rel="stylesheet" href="/global.css" />
-	</head>
-	<body>
+<BaseLayout
+	title={post.data.title}
+	description={post.data.description}
+	keywords={post.data.tags?.join(', ') || ''}
+	author={post.data.author}
+	ogImage={post.data.heroImage}
+	ogType="article"
+	canonical={`https://sumaqagro.com/blog/${post.slug}`}
+>
 		<!-- Header -->
 		<Header />
 		
@@ -227,3 +196,4 @@ const { Content } = await post.render();
 		}
 	}
 </style>
+</BaseLayout>
