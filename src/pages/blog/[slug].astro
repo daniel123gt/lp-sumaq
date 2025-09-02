@@ -1,0 +1,229 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo-vertical.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{post.data.title} | Blog SUMAQ AGRO</title>
+		<meta name="description" content={post.data.description} />
+		<meta name="keywords" content={post.data.tags?.join(', ') || ''} />
+		<meta name="author" content={post.data.author} />
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content={post.data.title} />
+		<meta property="og:description" content={post.data.description} />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={`https://sumaqagro.com/blog/${post.slug}`} />
+		<meta property="og:image" content={post.data.heroImage} />
+		
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={post.data.title} />
+		<meta name="twitter:description" content={post.data.description} />
+		<meta name="twitter:image" content={post.data.heroImage} />
+		
+		<!-- Preconnect to external resources -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Global Styles -->
+		<link rel="stylesheet" href="/global.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<Header />
+		
+		<!-- Hero Section -->
+		<section class="blog-hero">
+			<div class="container">
+				<div class="hero-content">
+					<nav class="breadcrumb">
+						<a href="/blog">Blog</a>
+						<span>›</span>
+						<span>{post.data.category}</span>
+					</nav>
+					<h1>{post.data.title}</h1>
+					<p>{post.data.description}</p>
+					<div class="article-meta-hero">
+						<span class="article-category">{post.data.category}</span>
+						<span class="article-date">{post.data.pubDate.toLocaleDateString('es-ES')}</span>
+						<span class="article-author">Por {post.data.author}</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Main Article -->
+		<section class="main-article">
+			<div class="container">
+				<article class="article-post">
+					{post.data.heroImage && (
+						<div class="article-image">
+							<img src={post.data.heroImage} alt={post.data.title} />
+						</div>
+					)}
+					
+					<div class="article-content">
+						<Content />
+					</div>
+					
+					<div class="article-footer">
+						<div class="article-tags">
+							{post.data.tags?.map((tag) => (
+								<span class="tag">{tag}</span>
+							))}
+						</div>
+						<div class="article-actions">
+							<a href="/productos" class="btn btn-primary">Ver Productos</a>
+							<a href="/contacto" class="btn btn-secondary">Consultar sobre {post.data.category}</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- Related Content -->
+		<section class="related-content">
+			<div class="container">
+				<div class="section-header">
+					<h2>¿Te interesa saber más?</h2>
+					<p>Explora nuestros productos y servicios relacionados</p>
+				</div>
+				<div class="related-grid">
+					<div class="related-card">
+						<div class="related-icon">🌿</div>
+						<h3>Nuestros Productos</h3>
+						<p>Descubre toda nuestra línea de productos biológicos para una agricultura sostenible</p>
+						<a href="/productos" class="btn btn-outline">Ver Catálogo</a>
+					</div>
+					<div class="related-card">
+						<div class="related-icon">📞</div>
+						<h3>Asesoría Personalizada</h3>
+						<p>¿Tienes dudas sobre nuestros productos? Nuestro equipo está listo para ayudarte</p>
+						<a href="/contacto" class="btn btn-outline">Contactar</a>
+					</div>
+					<div class="related-card">
+						<div class="related-icon">🏢</div>
+						<h3>Conoce SUMAQ AGRO</h3>
+						<p>Descubre nuestra historia y compromiso con la agricultura sostenible</p>
+						<a href="/nosotros" class="btn btn-outline">Sobre Nosotros</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<Footer />
+		
+		<!-- Smooth Scrolling Script -->
+		<script>
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', (e) => {
+					e.preventDefault();
+					const target = document.querySelector(anchor.getAttribute('href') || '');
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+		font-size: 0.9rem;
+		opacity: 0.8;
+	}
+
+	.breadcrumb a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+
+	.article-meta-hero {
+		display: flex;
+		gap: 1rem;
+		margin-top: 1.5rem;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.article-meta-hero .article-category {
+		background: var(--color-secondary);
+		color: var(--color-white);
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.article-meta-hero .article-date,
+	.article-meta-hero .article-author {
+		color: var(--color-white);
+		opacity: 0.8;
+		font-size: 0.9rem;
+	}
+
+	.article-tags {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 2rem;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.tag {
+		background: rgba(66, 92, 37, 0.1);
+		color: var(--color-primary);
+		padding: 0.3rem 0.8rem;
+		border-radius: 15px;
+		font-size: 0.8rem;
+		font-weight: 500;
+	}
+
+	@media (max-width: 768px) {
+		.article-meta-hero {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+</style>

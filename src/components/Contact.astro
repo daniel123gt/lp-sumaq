@@ -13,17 +13,7 @@
     
     <div class="contact-content">
       <div class="contact-info">
-        <div class="info-card">
-          <div class="info-icon">
-            <div class="icon-location"></div>
-          </div>
-          <h3>Ubicación</h3>
-          <p>
-            Av. Principal 123<br>
-            Zona Industrial<br>
-            Lima, Perú
-          </p>
-        </div>
+
         
         <div class="info-card">
           <div class="info-icon">
@@ -31,8 +21,8 @@
           </div>
           <h3>Teléfono</h3>
           <p>
-            +51 1 234 5678<br>
-            +51 1 234 5679
+            978723785<br>
+            Susan Gómez
           </p>
         </div>
         
@@ -42,8 +32,8 @@
           </div>
           <h3>Email</h3>
           <p>
-            info@sumaqagro.com<br>
-            ventas@sumaqagro.com
+            comercial@sumaqagro.pe<br>
+            sgomez@sumaqagro.pe
           </p>
         </div>
         
@@ -51,76 +41,46 @@
           <div class="info-icon">
             <div class="icon-time"></div>
           </div>
-          <h3>Horario de Atención</h3>
+          <h3>Respuesta Asegurada</h3>
           <p>
-            Lunes - Viernes: 8:00 AM - 6:00 PM<br>
-            Sábados: 9:00 AM - 1:00 PM
+            Respondemos a todas las consultas<br>
+            <br>
+            <span class="highlight-text">¡Estamos aquí para ayudarte!</span>
           </p>
         </div>
       </div>
       
-      <div class="contact-form">
-        <h3>Envíanos un Mensaje</h3>
-        <form class="form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Nombre Completo *</label>
-            <input type="text" id="name" name="name" required>
+      <div class="contact-info-section">
+        <h3>¿Cómo Podemos Ayudarte?</h3>
+        <div class="services-overview">
+          <div class="service-item">
+            <div class="service-icon">🌱</div>
+            <h4>Productos Biológicos</h4>
+            <p>Fertilizantes, bioestimulantes y biocatalizadores de alta calidad para maximizar tu rendimiento.</p>
           </div>
-          
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
+          <div class="service-item">
+            <div class="service-icon">🌿</div>
+            <h4>Soluciones Personalizadas</h4>
+            <p>Desarrollamos soluciones a medida según las necesidades específicas de tu proyecto agrícola.</p>
           </div>
-          
-          <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="contact-cta">
+          <h4>¿Tienes alguna consulta específica?</h4>
+          <p>No dudes en contactarnos directamente por teléfono o email. Nuestro equipo está listo para ayudarte con cualquier pregunta sobre nuestros productos y servicios.</p>
+          <div class="cta-buttons">
+            <a href="tel:978723785" class="btn btn-primary">
+              <span>📞 Llamar Ahora</span>
+            </a>
+            <a href="mailto:comercial@sumaqagro.pe" class="btn btn-secondary">
+              <span>✉️ Enviar Email</span>
+            </a>
           </div>
-          
-          <div class="form-group">
-            <label for="company">Empresa</label>
-            <input type="text" id="company" name="company">
-          </div>
-          
-          <div class="form-group">
-            <label for="service">Servicio de Interés</label>
-            <select id="service" name="service">
-              <option value="">Selecciona un servicio</option>
-              <option value="analisis-suelos">Análisis de Suelos</option>
-              <option value="sistemas-riego">Sistemas de Riego</option>
-              <option value="manejo-plagas">Manejo de Plagas</option>
-              <option value="consultoria">Consultoría Agrícola</option>
-              <option value="tecnologia">Tecnología Agrícola</option>
-              <option value="capacitacion">Capacitación</option>
-              <option value="productos">Productos</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Mensaje *</label>
-            <textarea id="message" name="message" rows="5" required 
-                      placeholder="Cuéntanos sobre tu proyecto o consulta..."></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">
-            <span class="btn-text">Enviar Mensaje</span>
-            <span class="btn-loading">Enviando...</span>
-          </button>
-        </form>
-      </div>
-    </div>
-    
-    <div class="map-section">
-      <h3>Nuestra Ubicación</h3>
-      <div class="map-placeholder">
-        <div class="map-content">
-          <div class="map-icon"></div>
-          <p>Mapa interactivo de ubicación</p>
-          <span>Av. Principal 123, Zona Industrial, Lima, Perú</span>
         </div>
       </div>
     </div>
+    
+
   </div>
 </section>
 
@@ -270,14 +230,14 @@
     font-size: 0.95rem;
   }
 
-  .contact-form {
+  .contact-info-section {
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(66, 92, 37, 0.1);
   }
 
-  .contact-form h3 {
+  .contact-info-section h3 {
     font-size: 1.8rem;
     font-weight: 700;
     color: #32411C;
@@ -285,68 +245,114 @@
     text-align: center;
   }
 
-  .form-group {
-    margin-bottom: 1.5rem;
+  .services-overview {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #32411C;
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    border-left: 4px solid #B08919;
+    transition: transform 0.3s ease;
   }
 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid rgba(66, 92, 37, 0.1);
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    background: #f8f9fa;
+  .service-item:hover {
+    transform: translateY(-2px);
   }
 
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #9F5818;
-    background: white;
+  .service-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
   }
 
-  .submit-btn {
-    width: 100%;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #425C25 0%, #9F5818 100%);
-    color: white;
-    border: none;
-    border-radius: 50px;
+  .service-item h4 {
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
+    color: #32411C;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-item p {
+    color: #32411C;
+    opacity: 0.8;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  .contact-cta {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #425C25 0%, #32411C 100%);
+    border-radius: 15px;
+    color: white;
+  }
+
+  .contact-cta h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #B08919;
+  }
+
+  .contact-cta p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .submit-btn:hover {
+  .cta-buttons .btn-primary {
+    background: #B08919;
+    color: white;
+  }
+
+  .cta-buttons .btn-primary:hover {
+    background: #9F5818;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(66, 92, 37, 0.3);
   }
 
-  .btn-loading {
-    display: none;
+  .cta-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #B08919;
   }
 
-  .submit-btn.loading .btn-text {
-    display: none;
+  .cta-buttons .btn-secondary:hover {
+    background: #B08919;
+    transform: translateY(-2px);
   }
 
-  .submit-btn.loading .btn-loading {
-    display: inline;
+  .highlight-text {
+    color: #B08919;
+    font-weight: 600;
   }
+
+
 
   .map-section {
     text-align: center;
@@ -415,12 +421,27 @@
       grid-template-columns: 1fr;
     }
 
-    .contact-form {
+    .contact-info-section {
       padding: 2rem;
     }
 
-    .map-placeholder {
-      padding: 2rem;
+    .services-overview {
+      grid-template-columns: 1fr;
+    }
+
+    .service-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      max-width: 250px;
     }
 
     .section-title {
@@ -430,29 +451,17 @@
 </style>
 
 <script>
-  // Form handling
-  const contactForm = document.getElementById('contactForm');
-  const submitBtn = contactForm?.querySelector('.submit-btn');
-
-  contactForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    if (submitBtn) {
-      submitBtn.classList.add('loading');
-      submitBtn.disabled = true;
-    }
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    // Show success message (in a real app, you'd handle the actual submission)
-    alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-
-    if (submitBtn) {
-      submitBtn.classList.remove('loading');
-      submitBtn.disabled = false;
-    }
-
-    contactForm.reset();
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(anchor.getAttribute('href') || '');
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
 </script>

@@ -1,7 +1,13 @@
 ---
 // Página de Blog para SUMAQ AGRO
+import { getCollection } from 'astro:content';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featuredPost = sortedPosts.find(post => post.data.featured);
+const otherPosts = sortedPosts.filter(post => !post.data.featured);
 ---
 
 <html lang="es">
@@ -52,231 +58,105 @@ import Footer from '../components/Footer.astro';
 			<div class="container">
 				<div class="hero-content">
 					<h1>Blog SUMAQ AGRO</h1>
-					<p>Mantente informado sobre las últimas tendencias agrícolas, consejos de cultivo y noticias del sector</p>
-					
+					<p>Conocimiento y consejos para una agricultura sostenible y eficiente</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- Blog Categories -->
-		<section class="blog-categories">
-			<div class="container">
-				<div class="categories-grid">
-					<a href="#sostenibilidad" class="category-card">
-						<div class="category-icon">🌱</div>
-						<h3>Sostenibilidad</h3>
-						<span class="category-count">8 artículos</span>
-					</a>
-					<a href="#tecnologia" class="category-card">
-						<div class="category-icon">📱</div>
-						<h3>Tecnología</h3>
-						<span class="category-count">12 artículos</span>
-					</a>
-					<a href="#cultivos" class="category-card">
-						<div class="category-icon">🌿</div>
-						<h3>Cultivos</h3>
-						<span class="category-count">15 artículos</span>
-					</a>
-					<a href="#consejos" class="category-card">
-						<div class="category-icon">💡</div>
-						<h3>Consejos</h3>
-						<span class="category-count">20 artículos</span>
-					</a>
-					<a href="#noticias" class="category-card">
-						<div class="category-icon">📰</div>
-						<h3>Noticias</h3>
-						<span class="category-count">10 artículos</span>
-					</a>
-					<a href="#investigacion" class="category-card">
-						<div class="category-icon">🔬</div>
-						<h3>Investigación</h3>
-						<span class="category-count">6 artículos</span>
-					</a>
+		<!-- Featured Post -->
+		{featuredPost && (
+			<section class="featured-post">
+				<div class="container">
+					<div class="section-header">
+						<h2>Artículo Destacado</h2>
+						<p>Nuestro contenido más relevante</p>
+					</div>
+					<article class="featured-article-card">
+						{featuredPost.data.heroImage && (
+							<div class="featured-image">
+								<img src={featuredPost.data.heroImage} alt={featuredPost.data.title} />
+							</div>
+						)}
+						<div class="featured-content">
+							<div class="article-meta">
+								<span class="article-category">{featuredPost.data.category}</span>
+								<span class="article-date">{featuredPost.data.pubDate.toLocaleDateString('es-ES')}</span>
+							</div>
+							<h3>{featuredPost.data.title}</h3>
+							<p>{featuredPost.data.description}</p>
+							<div class="article-tags">
+								{featuredPost.data.tags?.slice(0, 3).map((tag) => (
+									<span class="tag">{tag}</span>
+								))}
+							</div>
+							<a href={`/blog/${featuredPost.slug}`} class="btn btn-primary">Leer Artículo</a>
+						</div>
+					</article>
 				</div>
-			</div>
-		</section>
+			</section>
+		)}
 
-		<!-- Featured Articles -->
-		<section class="featured-articles">
+		<!-- All Posts -->
+		<section class="all-posts">
 			<div class="container">
 				<div class="section-header">
-					<h2>Artículos Destacados</h2>
-					<p>Los mejores contenidos seleccionados por nuestro equipo</p>
+					<h2>Todos los Artículos</h2>
+					<p>Explora nuestro contenido sobre agricultura sostenible</p>
 				</div>
-				<div class="featured-grid">
-					<article class="featured-article main">
-						<div class="article-image">🌱</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Sostenibilidad</span>
-								<span class="article-date">Hace 2 días</span>
+				<div class="posts-grid">
+					{sortedPosts.map((post) => (
+						<article class="post-card">
+							{post.data.heroImage && (
+								<div class="post-image">
+									<img src={post.data.heroImage} alt={post.data.title} />
+								</div>
+							)}
+							<div class="post-content">
+								<div class="post-meta">
+									<span class="post-category">{post.data.category}</span>
+									<span class="post-date">{post.data.pubDate.toLocaleDateString('es-ES')}</span>
+								</div>
+								<h3>{post.data.title}</h3>
+								<p>{post.data.description}</p>
+								<div class="post-tags">
+									{post.data.tags?.slice(0, 2).map((tag) => (
+										<span class="tag">{tag}</span>
+									))}
+								</div>
+								<a href={`/blog/${post.slug}`} class="read-more">Leer más →</a>
 							</div>
-							<h3>Innovaciones en Agricultura Sostenible: El Futuro del Cultivo</h3>
-							<p>Descubre las últimas tecnologías que están transformando el sector agrícola hacia un futuro más sostenible y eficiente...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 8 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="featured-article">
-						<div class="article-image">🌿</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Consejos</span>
-								<span class="article-date">Hace 1 semana</span>
-							</div>
-							<h3>Guía Completa de Cultivos Orgánicos para Principiantes</h3>
-							<p>Todo lo que necesitas saber para iniciar tu huerto orgánico en casa, desde la preparación del suelo hasta la cosecha...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 12 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="featured-article">
-						<div class="article-image">💧</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Tecnología</span>
-								<span class="article-date">Hace 2 semanas</span>
-							</div>
-							<h3>Sistemas de Riego Inteligente: Ahorro de Agua y Mejor Rendimiento</h3>
-							<p>Conoce cómo la tecnología está revolucionando el riego agrícola, optimizando el uso del agua y mejorando la productividad...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 10 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
+						</article>
+					))}
 				</div>
 			</div>
 		</section>
 
-		<!-- Latest Articles -->
-		<section class="latest-articles">
+		<!-- Related Content -->
+		<section class="related-content">
 			<div class="container">
 				<div class="section-header">
-					<h2>Últimos Artículos</h2>
-					<p>Mantente al día con nuestras publicaciones más recientes</p>
+					<h2>¿Te interesa saber más?</h2>
+					<p>Explora nuestros productos y servicios relacionados</p>
 				</div>
-				<div class="articles-grid">
-					<article class="article-card">
-						<div class="article-image">🌱</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Cultivos</span>
-								<span class="article-date">Hace 3 días</span>
-							</div>
-							<h3>El Futuro de la Agricultura: Tendencias 2024</h3>
-							<p>Análisis de las principales tendencias que marcarán el futuro de la agricultura en los próximos años...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 6 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="article-card">
-						<div class="article-image">💡</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Consejos</span>
-								<span class="article-date">Hace 1 semana</span>
-							</div>
-							<h3>Tips para Principiantes: Empezando en la Agricultura</h3>
-							<p>Una guía práctica para quienes quieren iniciar su aventura en el mundo de la agricultura...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 8 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="article-card">
-						<div class="article-image">🔬</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Investigación</span>
-								<span class="article-date">Hace 2 semanas</span>
-							</div>
-							<h3>Biopesticidas: Alternativas Naturales para el Control de Plagas</h3>
-							<p>Descubre cómo los biopesticidas están revolucionando el control de plagas de manera sostenible...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 12 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="article-card">
-						<div class="article-image">🌿</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Sostenibilidad</span>
-								<span class="article-date">Hace 3 semanas</span>
-							</div>
-							<h3>Agricultura Regenerativa: Restaurando la Salud del Suelo</h3>
-							<p>Conoce los principios de la agricultura regenerativa y cómo puede transformar tu terreno...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 10 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="article-card">
-						<div class="article-image">📱</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Tecnología</span>
-								<span class="article-date">Hace 1 mes</span>
-							</div>
-							<h3>Apps Agrícolas: Herramientas Digitales para el Campo</h3>
-							<p>Las mejores aplicaciones móviles que todo agricultor moderno debería conocer...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 7 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-					
-					<article class="article-card">
-						<div class="article-image">🌱</div>
-						<div class="article-content">
-							<div class="article-meta">
-								<span class="article-category">Cultivos</span>
-								<span class="article-date">Hace 1 mes</span>
-							</div>
-							<h3>Huertos Urbanos: Agricultura en la Ciudad</h3>
-							<p>Ideas y consejos para crear tu propio huerto urbano, sin importar el espacio disponible...</p>
-							<div class="article-footer">
-								<span class="read-time">📖 9 min de lectura</span>
-								<a href="#" class="read-more">Leer más →</a>
-							</div>
-						</div>
-					</article>
-				</div>
-				
-				<div class="load-more">
-					<button class="btn btn-outline">Cargar Más Artículos</button>
-				</div>
-			</div>
-		</section>
-
-		<!-- Newsletter Section -->
-		<section class="newsletter-section">
-			<div class="container">
-				<div class="newsletter-content">
-					<h2>¡No te pierdas nada!</h2>
-					<p>Suscríbete a nuestro newsletter y recibe los mejores artículos directamente en tu email</p>
-					<form class="newsletter-form">
-						<input type="email" placeholder="Tu email aquí..." required />
-						<button type="submit" class="btn btn-primary">Suscribirse</button>
-					</form>
-					<p class="newsletter-note">📧 Sin spam, solo contenido valioso. Puedes cancelar en cualquier momento.</p>
+				<div class="related-grid">
+					<div class="related-card">
+						<div class="related-icon">🌿</div>
+						<h3>Nuestros Productos</h3>
+						<p>Descubre toda nuestra línea de productos biológicos para una agricultura sostenible</p>
+						<a href="/productos" class="btn btn-outline">Ver Catálogo</a>
+					</div>
+					<div class="related-card">
+						<div class="related-icon">📞</div>
+						<h3>Asesoría Personalizada</h3>
+						<p>¿Tienes dudas sobre Diatomaq? Nuestro equipo está listo para ayudarte</p>
+						<a href="/contacto" class="btn btn-outline">Contactar</a>
+					</div>
+					<div class="related-card">
+						<div class="related-icon">🏢</div>
+						<h3>Conoce SUMAQ AGRO</h3>
+						<p>Descubre nuestra historia y compromiso con la agricultura sostenible</p>
+						<a href="/nosotros" class="btn btn-outline">Sobre Nosotros</a>
+					</div>
 				</div>
 			</div>
 		</section>
