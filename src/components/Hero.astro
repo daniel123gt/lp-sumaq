@@ -377,12 +377,30 @@
 </style>
 
 <script>
-  // Carrusel automático del hero
-  document.addEventListener('DOMContentLoaded', function() {
+  // Carrusel automático del hero - Compatible con View Transitions
+  let carouselInterval = null;
+  let currentSlideIndex = 0;
+
+  function initHeroCarousel() {
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.indicator');
-    let currentSlide = 0;
-    let interval;
+    
+    // Si no hay slides, salir
+    if (slides.length === 0) return;
+    
+    // Limpiar interval anterior si existe
+    if (carouselInterval) {
+      clearTimeout(carouselInterval);
+      carouselInterval = null;
+    }
+
+    // Encontrar cuál slide está activo actualmente
+    currentSlideIndex = 0;
+    slides.forEach((slide, index) => {
+      if (slide.classList.contains('active')) {
+        currentSlideIndex = index;
+      }
+    });
 
     function showSlide(index) {
       // Ocultar todas las slides
@@ -392,44 +410,59 @@
       // Mostrar la slide actual
       slides[index].classList.add('active');
       indicators[index].classList.add('active');
+      
+      currentSlideIndex = index;
     }
 
     function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
+      const nextIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(nextIndex);
     }
 
     function startCarousel() {
-      interval = setTimeout(() => {
+      carouselInterval = setTimeout(() => {
         nextSlide();
         startCarousel(); // Recursivo para continuar el ciclo
-      }, 5000); // Cambiar cada 3 segundos
+      }, 5000); // Cambiar cada 5 segundos
     }
 
     function stopCarousel() {
-      if (interval) {
-        clearTimeout(interval);
+      if (carouselInterval) {
+        clearTimeout(carouselInterval);
+        carouselInterval = null;
       }
     }
 
     // Event listeners para los indicadores
     indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
+      // Remover listeners anteriores
+      indicator.onclick = null;
+      
+      // Agregar nuevo listener
+      indicator.onclick = () => {
+        showSlide(index);
         stopCarousel();
         startCarousel(); // Reiniciar el timer
-      });
+      };
     });
 
     // Pausar el carrusel cuando el usuario hace hover
     const hero = document.querySelector('.hero');
     if (hero) {
-      hero.addEventListener('mouseenter', stopCarousel);
-      hero.addEventListener('mouseleave', startCarousel);
+      hero.onmouseenter = stopCarousel;
+      hero.onmouseleave = startCarousel;
     }
 
+    // Sincronizar indicadores con el slide activo actual
+    showSlide(currentSlideIndex);
+    
     // Iniciar el carrusel
     startCarousel();
-  });
+  }
+
+  // Ejecutar en DOMContentLoaded (carga inicial)
+  document.addEventListener('DOMContentLoaded', initHeroCarousel);
+  
+  // Ejecutar en astro:page-load (View Transitions)
+  document.addEventListener('astro:page-load', initHeroCarousel);
 </script>
