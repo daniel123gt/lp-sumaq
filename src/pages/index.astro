@@ -7,6 +7,7 @@ import About from "../components/About.astro";
 import Products from "../components/Products.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import SchemaOrg from "../components/SchemaOrg.astro";
 ---
 
 <BaseLayout
@@ -15,11 +16,17 @@ import Footer from "../components/Footer.astro";
 	keywords="agricultura, productos biológicos, fertilizantes, bioestimulantes, SUMAQ AGRO, agricultura sostenible"
 	ogImage="/products/DIATOMAQ.png"
 >
+		<!-- Schema.org Structured Data -->
+		<SchemaOrg type="Organization" data={{}} />
+		<SchemaOrg type="LocalBusiness" data={{}} />
+		
 		<!-- Header -->
 		<Header />
 
-		<!-- Hero Section -->
-		<Hero />
+		<!-- Main Content -->
+		<main id="main-content" role="main">
+			<!-- Hero Section -->
+			<Hero />
 
 		<!-- About Section (Resumida) -->
 		<section class="home-about">
@@ -125,28 +132,28 @@ import Footer from "../components/Footer.astro";
 				<div class="products-preview">
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/BOOSTER.png" alt="Booster - Revitalizador Biológico" />
+							<img src="/products/BOOSTER.png" alt="BOOSTER - Revitalizador biológico a base de algas marinas seleccionadas para nutrir, desintoxicar y proteger las plantas del estrés" loading="lazy" width="200" height="200" />
 						</div>
 						<h3>BOOSTER</h3>
 						<p>Revitalizador biológico a base de algas marinas</p>
 					</div>
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/ROOT.png" alt="ROOT - Bioestimulante y Activador Radicular" />
+							<img src="/products/ROOT.png" alt="ROOT - Bioestimulante y activador radicular con complejo de antioxidantes que promueve el crecimiento saludable de las raíces" loading="lazy" width="200" height="200" />
 						</div>
 						<h3>ROOT</h3>
 						<p>Bioestimulante y activador radicular</p>
 					</div>
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/ME.png" alt="ME - Microelementos Esenciales" />
+							<img src="/products/ME.png" alt="ME - Microelementos esenciales formulados a la medida y complejados con algas para complementar la nutrición de los cultivos" loading="lazy" width="200" height="200" />
 						</div>
 						<h3>ME</h3>
 						<p>Microelementos esenciales complejados</p>
 					</div>
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/ARBOLINA.png" alt="Arbolina - Activador Fisiológico" />
+							<img src="/products/ARBOLINA.png" alt="ARBOLINA - Activador Fisiológico que impulsa la vitalidad de los cultivos y promueve un alto rendimiento fotosintético" loading="lazy" width="200" height="200" />
 						</div>
 						<h3>ARBOLINA</h3>
 						<p>Activador Fisiológico para vitalidad</p>
@@ -196,6 +203,8 @@ import Footer from "../components/Footer.astro";
 			</div>
 		</section>
 
+		</main>
+		
 		<!-- Footer -->
 		<Footer />
 

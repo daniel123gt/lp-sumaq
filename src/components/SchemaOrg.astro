@@ -1,0 +1,122 @@
+---
+// Schema.org structured data component
+export interface Props {
+  type: 'Organization' | 'LocalBusiness' | 'Product' | 'Article';
+  data: any;
+}
+
+const { type, data } = Astro.props;
+
+function getSchemaData() {
+  const baseUrl = 'https://sumaqagro.com';
+  
+  switch (type) {
+    case 'Organization':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SUMAQ AGRO",
+        "url": baseUrl,
+        "logo": `${baseUrl}/logo-vertical.svg`,
+        "description": "Empresa líder en productos biológicos para agricultura sostenible",
+        "foundingDate": "2024",
+        "founder": {
+          "@type": "Person",
+          "name": "Susan Gómez"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+51-978723785",
+          "contactType": "customer service",
+          "email": "comercial@sumaqagro.pe"
+        },
+        "sameAs": [
+          "https://web.facebook.com/profile.php?id=61579982922498",
+          "https://www.instagram.com/sumaqagro/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PE",
+          "addressRegion": "Lima"
+        }
+      };
+
+    case 'LocalBusiness':
+      return {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SUMAQ AGRO",
+        "description": "Productos biológicos para agricultura sostenible",
+        "url": baseUrl,
+        "telephone": "+51-978723785",
+        "email": "comercial@sumaqagro.pe",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PE",
+          "addressRegion": "Lima"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "priceRange": "$$",
+        "serviceArea": {
+          "@type": "Country",
+          "name": "Perú"
+        }
+      };
+
+    case 'Product':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": data.name,
+        "description": data.description,
+        "image": `${baseUrl}${data.image}`,
+        "brand": {
+          "@type": "Brand",
+          "name": "SUMAQ AGRO"
+        },
+        "category": data.category,
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "PEN",
+          "seller": {
+            "@type": "Organization",
+            "name": "SUMAQ AGRO"
+          }
+        }
+      };
+
+    case 'Article':
+      return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": data.title,
+        "description": data.description,
+        "image": `${baseUrl}${data.image}`,
+        "author": {
+          "@type": "Organization",
+          "name": "SUMAQ AGRO"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SUMAQ AGRO",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${baseUrl}/logo-vertical.svg`
+          }
+        },
+        "datePublished": data.datePublished,
+        "dateModified": data.dateModified || data.datePublished
+      };
+
+    default:
+      return {};
+  }
+}
+
+const schemaData = getSchemaData();
+---
+
+{Object.keys(schemaData).length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+)}
