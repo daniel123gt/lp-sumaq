@@ -6,10 +6,7 @@
   <div class="container">
     <div class="logo">
       <a href="/" class="logo-link" aria-label="SUMAQ AGRO - Ir al inicio">
-        <picture>
-          <source srcset="/logo-horizontal.webp" type="image/webp">
-          <img src="/logo-horizontal.webp" alt="SUMAQ AGRO" class="logo-image" />
-        </picture>
+        <img src="/logo-horizontal.png" alt="SUMAQ AGRO" class="logo-image" width="171" height="60" />
       </a>
     </div>
     
@@ -46,17 +43,18 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0.75rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    min-height: 75px;
   }
 
   .logo {
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 0.25rem 0;
   }
 
   .logo-link {
@@ -68,7 +66,7 @@
   }
 
   .logo-image {
-    height: 70px;
+    height: 60px;
     width: auto;
     transition: transform 0.3s ease;
   }
