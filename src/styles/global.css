@@ -52,13 +52,13 @@ body {
   background-clip: text;
 }
 
-.section-header p {
-  font-size: 1.1rem;
-  color: var(--color-dark);
-  opacity: 0.8;
-  max-width: 600px;
-  margin: 0 auto;
-}
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
 /* Buttons */
 .btn {

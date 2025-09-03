@@ -14,7 +14,7 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 	title="SUMAQ AGRO - Productos Biológicos para Agricultura Sostenible"
 	description="SUMAQ AGRO ofrece productos biológicos de alta calidad para una agricultura sostenible. Fertilizantes, bioestimulantes y biocatalizadores naturales."
 	keywords="agricultura, productos biológicos, fertilizantes, bioestimulantes, SUMAQ AGRO, agricultura sostenible"
-	ogImage="/products/DIATOMAQ.png"
+	ogImage="/products/DIATOMAQ.webp"
 >
 		<!-- Schema.org Structured Data -->
 		<SchemaOrg type="Organization" data={{}} />
@@ -78,7 +78,10 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 				<div class="blog-preview">
 					<a href="/blog/diatomaq-ventajas-agricultura-moderna" class="blog-preview-card">
 						<div class="blog-image">
-							<img src="/products/DIATOMAQ.png" alt="Diatomaq - Ventajas en Agricultura" />
+							<picture>
+								<source srcset="/products/DIATOMAQ.webp" type="image/webp">
+								<img src="/products/DIATOMAQ.webp" alt="Diatomaq - Ventajas en Agricultura" />
+							</picture>
 						</div>
 						<h3>6 Ventajas de Diatomaq en la Agricultura</h3>
 						<p>
@@ -132,28 +135,40 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 				<div class="products-preview">
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/BOOSTER.png" alt="BOOSTER - Revitalizador biológico a base de algas marinas seleccionadas para nutrir, desintoxicar y proteger las plantas del estrés" loading="lazy" width="200" height="200" />
+							<picture>
+								<source srcset="/products/BOOSTER.webp" type="image/webp">
+								<img src="/products/BOOSTER.webp" alt="BOOSTER - Revitalizador biológico a base de algas marinas seleccionadas para nutrir, desintoxicar y proteger las plantas del estrés" loading="lazy" width="200" height="200" />
+							</picture>
 						</div>
 						<h3>BOOSTER</h3>
 						<p>Revitalizador biológico a base de algas marinas</p>
 					</div>
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/ROOT.png" alt="ROOT - Bioestimulante y activador radicular con complejo de antioxidantes que promueve el crecimiento saludable de las raíces" loading="lazy" width="200" height="200" />
+							<picture>
+								<source srcset="/products/ROOT.webp" type="image/webp">
+								<img src="/products/ROOT.webp" alt="ROOT - Bioestimulante y activador radicular con complejo de antioxidantes que promueve el crecimiento saludable de las raíces" loading="lazy" width="200" height="200" />
+							</picture>
 						</div>
 						<h3>ROOT</h3>
 						<p>Bioestimulante y activador radicular</p>
 					</div>
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/ME.png" alt="ME - Microelementos esenciales formulados a la medida y complejados con algas para complementar la nutrición de los cultivos" loading="lazy" width="200" height="200" />
+							<picture>
+								<source srcset="/products/ME.webp" type="image/webp">
+								<img src="/products/ME.webp" alt="ME - Microelementos esenciales formulados a la medida y complejados con algas para complementar la nutrición de los cultivos" loading="lazy" width="200" height="200" />
+							</picture>
 						</div>
 						<h3>ME</h3>
 						<p>Microelementos esenciales complejados</p>
 					</div>
 					<div class="product-preview-card">
 						<div class="product-image">
-							<img src="/products/ARBOLINA.png" alt="ARBOLINA - Activador Fisiológico que impulsa la vitalidad de los cultivos y promueve un alto rendimiento fotosintético" loading="lazy" width="200" height="200" />
+							<picture>
+								<source srcset="/products/ARBOLINA.webp" type="image/webp">
+								<img src="/products/ARBOLINA.webp" alt="ARBOLINA - Activador Fisiológico que impulsa la vitalidad de los cultivos y promueve un alto rendimiento fotosintético" loading="lazy" width="200" height="200" />
+							</picture>
 						</div>
 						<h3>ARBOLINA</h3>
 						<p>Activador Fisiológico para vitalidad</p>

@@ -3,7 +3,7 @@ title: "🌿 6 Ventajas de utilizar Diatomaq en la agricultura moderna"
 description: "Descubre las 6 ventajas principales del Diatomaq, un producto agrícola natural elaborado a base de tierra de diatomeas para el control de plagas y mejora del suelo."
 pubDate: 2024-12-19
 updatedDate: 2024-12-19
-heroImage: "/products/DIATOMAQ.png"
+heroImage: "/products/DIATOMAQ.webp"
 category: "Productos"
 tags: ["Diatomaq", "Agricultura Natural", "Control de Plagas", "Suelo", "Sostenibilidad"]
 author: "SUMAQ AGRO"
