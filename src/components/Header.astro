@@ -229,47 +229,87 @@
 </style>
 
 <script>
-  // Mobile menu functionality
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('.nav');
-  
-  mobileMenuBtn?.addEventListener('click', () => {
-    nav?.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
+  // Mobile menu functionality - Compatible with View Transitions
+  function initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn') as HTMLButtonElement | null;
+    const nav = document.querySelector('.nav') as HTMLElement | null;
     
-    // Prevent body scroll when menu is open
-    if (nav?.classList.contains('active')) {
-      document.body.style.overflow = 'hidden';
-    } else {
+    if (!mobileMenuBtn || !nav) return;
+
+    // Limpiar event listeners anteriores
+    mobileMenuBtn.onclick = null;
+    
+    // Toggle menu function
+    function toggleMenu() {
+      if (!nav || !mobileMenuBtn) return;
+      
+      nav.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+      
+      // Update aria-expanded
+      const isOpen = nav.classList.contains('active');
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen.toString());
+      
+      // Prevent body scroll when menu is open
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close menu function
+    function closeMenu() {
+      if (!nav || !mobileMenuBtn) return;
+      
+      nav.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
-  });
 
-  // Close menu when clicking on a link
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      nav?.classList.remove('active');
-      mobileMenuBtn?.classList.remove('active');
-      document.body.style.overflow = '';
+    // Add click event to menu button
+    mobileMenuBtn.onclick = toggleMenu;
+
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      const linkElement = link as HTMLElement;
+      // Remove previous listeners
+      linkElement.onclick = null;
+      // Add new listener
+      linkElement.onclick = closeMenu;
     });
-  });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!nav?.contains(e.target as Node) && !mobileMenuBtn?.contains(e.target as Node)) {
-      nav?.classList.remove('active');
-      mobileMenuBtn?.classList.remove('active');
-      document.body.style.overflow = '';
+    // Close menu when clicking outside
+    function handleOutsideClick(e: Event) {
+      if (!nav || !mobileMenuBtn) return;
+      
+      const target = e.target as Node;
+      if (!nav.contains(target) && !mobileMenuBtn.contains(target)) {
+        closeMenu();
+      }
     }
-  });
 
-  // Close menu on window resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      nav?.classList.remove('active');
-      mobileMenuBtn?.classList.remove('active');
-      document.body.style.overflow = '';
+    // Remove previous outside click listener and add new one
+    document.removeEventListener('click', handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
+
+    // Close menu on window resize
+    function handleResize() {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
     }
-  });
+
+    // Remove previous resize listener and add new one
+    window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
+  }
+
+  // Initialize on DOMContentLoaded (initial load)
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  
+  // Initialize on astro:page-load (View Transitions)
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>
