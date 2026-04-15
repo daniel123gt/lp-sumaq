@@ -1,5 +1,4 @@
 ---
-// Página de Blog para SUMAQ AGRO
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
@@ -17,10 +16,8 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 	keywords="blog agrícola, consejos agricultura, productos biológicos, agricultura sostenible, SUMAQ AGRO"
 	ogImage="/products/DIATOMAQ.webp"
 >
-		<!-- Header -->
 		<Header />
 		
-		<!-- Hero Section -->
 		<section class="blog-hero">
 			<div class="container">
 				<div class="hero-content">
@@ -30,7 +27,6 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 			</div>
 		</section>
 
-		<!-- Featured Post -->
 		{featuredPost && (
 			<section class="featured-post">
 				<div class="container">
@@ -63,7 +59,6 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 			</section>
 		)}
 
-		<!-- All Posts -->
 		<section class="all-posts">
 			<div class="container">
 				<div class="section-header">
@@ -98,7 +93,6 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 			</div>
 		</section>
 
-		<!-- Related Content -->
 		<section class="related-content">
 			<div class="container">
 				<div class="section-header">
@@ -128,12 +122,9 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 			</div>
 		</section>
 
-		<!-- Footer -->
 		<Footer />
-		
-		<!-- Smooth Scrolling Script -->
+			
 		<script>
-			// Smooth scrolling for anchor links
 			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 				anchor.addEventListener('click', (e: Event) => {
 					e.preventDefault();
@@ -147,7 +138,6 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 				});
 			});
 			
-			// Intersection Observer for animations
 			const observerOptions = {
 				threshold: 0.1,
 				rootMargin: '0px 0px -50px 0px'
@@ -161,7 +151,6 @@ const otherPosts = sortedPosts.filter(post => !post.data.featured);
 				});
 			}, observerOptions);
 			
-			// Observe all sections for animation
 			document.querySelectorAll('section').forEach(section => {
 				observer.observe(section);
 			});

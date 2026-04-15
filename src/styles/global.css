@@ -1,4 +1,26 @@
-/* Global Styles for SUMAQ AGRO */
+@font-face {
+  font-family: 'Adelle';
+  src: url('/fonts/Adelle_Reg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adelle';
+  src: url('/fonts/Adelle_Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adelle';
+  src: url('/fonts/Adelle_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --color-primary: #425C25;
@@ -14,7 +36,6 @@
   --transition: all 0.3s ease;
 }
 
-/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
@@ -22,20 +43,18 @@
 }
 
 body {
-  font-family: "Epunda Slab", serif;
+  font-family: "Adelle", Georgia, serif;
   line-height: 1.6;
   color: var(--color-dark);
   background-color: var(--color-white);
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Section Headers */
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -60,11 +79,10 @@ body {
     margin: 0 auto;
   }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -98,7 +116,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Home About Section */
 .home-about {
   padding: 4rem 0;
   background: linear-gradient(135deg, var(--color-white) 0%, var(--color-light) 100%);
@@ -193,7 +210,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Home Blog Section */
 .home-blog {
   padding: 4rem 0;
   background: var(--color-white);
@@ -257,7 +273,6 @@ body {
   text-align: center;
 }
 
-/* Home Products Section */
 .home-products {
   padding: 4rem 0;
   background: linear-gradient(135deg, var(--color-light) 0%, var(--color-white) 100%);
@@ -308,7 +323,6 @@ body {
   text-align: center;
 }
 
-/* Home Contact Section */
 .home-contact {
   padding: 4rem 0;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
@@ -369,7 +383,6 @@ body {
   color: var(--color-primary);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .section-header h2 {
     font-size: 2rem;
@@ -396,7 +409,6 @@ body {
   }
 }
 
-/* Animations */
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -412,7 +424,6 @@ body {
   }
 }
 
-/* Utility Classes */
 .text-center {
   text-align: center;
 }
@@ -427,7 +438,6 @@ body {
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 
-/* Blog Page Styles */
 .blog-hero {
   padding: 8rem 0 4rem 0;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
@@ -477,7 +487,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Blog Categories */
 .blog-categories {
   padding: 4rem 0;
   background: var(--color-white);
@@ -525,7 +534,6 @@ body {
   font-weight: 500;
 }
 
-/* Featured Articles */
 .featured-articles {
   padding: 4rem 0;
   background: linear-gradient(135deg, var(--color-light) 0%, var(--color-white) 100%);
@@ -626,7 +634,6 @@ body {
   color: var(--color-secondary);
 }
 
-/* Latest Articles */
 .latest-articles {
   padding: 4rem 0;
   background: var(--color-white);
@@ -657,7 +664,6 @@ body {
   text-align: center;
 }
 
-/* Newsletter Section */
 .newsletter-section {
   padding: 4rem 0;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
@@ -703,7 +709,6 @@ body {
   font-style: italic;
 }
 
-/* Responsive Blog Styles */
 @media (max-width: 768px) {
   .blog-hero h1 {
     font-size: 2.5rem;

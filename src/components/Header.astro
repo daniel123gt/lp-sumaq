@@ -1,5 +1,4 @@
 ---
-// Header component for SUMAQ AGRO
 ---
 
 <header class="header" role="banner">
@@ -131,7 +130,7 @@
     border-radius: 2px;
   }
 
-  /* Mobile Menu Styles */
+  
   @media (max-width: 768px) {
     .nav {
       position: fixed;
@@ -212,8 +211,7 @@
     .container {
       padding: 0 1rem;
     }
-
-    /* Hamburger Animation */
+    
     .mobile-menu-btn.active span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
     }
@@ -229,28 +227,23 @@
 </style>
 
 <script>
-  // Mobile menu functionality - Compatible with View Transitions
   function initMobileMenu() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn') as HTMLButtonElement | null;
     const nav = document.querySelector('.nav') as HTMLElement | null;
     
     if (!mobileMenuBtn || !nav) return;
 
-    // Limpiar event listeners anteriores
     mobileMenuBtn.onclick = null;
     
-    // Toggle menu function
     function toggleMenu() {
       if (!nav || !mobileMenuBtn) return;
       
       nav.classList.toggle('active');
       mobileMenuBtn.classList.toggle('active');
       
-      // Update aria-expanded
       const isOpen = nav.classList.contains('active');
       mobileMenuBtn.setAttribute('aria-expanded', isOpen.toString());
       
-      // Prevent body scroll when menu is open
       if (isOpen) {
         document.body.style.overflow = 'hidden';
       } else {
@@ -258,7 +251,6 @@
       }
     }
 
-    // Close menu function
     function closeMenu() {
       if (!nav || !mobileMenuBtn) return;
       
@@ -268,20 +260,15 @@
       document.body.style.overflow = '';
     }
 
-    // Add click event to menu button
     mobileMenuBtn.onclick = toggleMenu;
 
-    // Close menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
       const linkElement = link as HTMLElement;
-      // Remove previous listeners
       linkElement.onclick = null;
-      // Add new listener
       linkElement.onclick = closeMenu;
     });
 
-    // Close menu when clicking outside
     function handleOutsideClick(e: Event) {
       if (!nav || !mobileMenuBtn) return;
       
@@ -291,25 +278,20 @@
       }
     }
 
-    // Remove previous outside click listener and add new one
     document.removeEventListener('click', handleOutsideClick);
     document.addEventListener('click', handleOutsideClick);
 
-    // Close menu on window resize
     function handleResize() {
       if (window.innerWidth > 768) {
         closeMenu();
       }
     }
 
-    // Remove previous resize listener and add new one
     window.removeEventListener('resize', handleResize);
     window.addEventListener('resize', handleResize);
   }
 
-  // Initialize on DOMContentLoaded (initial load)
   document.addEventListener('DOMContentLoaded', initMobileMenu);
   
-  // Initialize on astro:page-load (View Transitions)
   document.addEventListener('astro:page-load', initMobileMenu);
 </script>

@@ -1,5 +1,4 @@
 ---
-// Página principal para SUMAQ AGRO
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
@@ -16,60 +15,51 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 	keywords="agricultura, productos biológicos, fertilizantes, bioestimulantes, SUMAQ AGRO, agricultura sostenible"
 	ogImage="/products/DIATOMAQ.webp"
 >
-		<!-- Schema.org Structured Data -->
-		<SchemaOrg type="Organization" data={{}} />
-		<SchemaOrg type="LocalBusiness" data={{}} />
-		
-		<!-- Header -->
-		<Header />
+	<SchemaOrg type="Organization" data={{}} />
+	<SchemaOrg type="LocalBusiness" data={{}} />
+	
+	<Header />
 
-		<!-- Main Content -->
-		<main id="main-content" role="main">
-			<!-- Hero Section -->
-			<Hero />
+	<main id="main-content" role="main">
+		<Hero />
 
-		<!-- About Section (Resumida) -->
 		<section class="home-about">
 			<div class="container">
 				<div class="section-header">
-					<h2>Un Nuevo Emprendimiento con Alma</h2>
+					<h2>Un nuevo emprendimiento con alma</h2>
 					<p>Conoce nuestra historia y misión</p>
 				</div>
 				<div class="about-preview">
 					<div class="about-content">
 						<p>
 							Tras años de experiencia profesional en el sector
-							agrícola, Susan Gómez decidió crear SUMAQ AGRO: una
+							agrícola, Susan Gómez decidió crear Sumaq Agro; una
 							empresa que une tecnología, respeto ambiental y
 							empatía humana.
 						</p>
 						<div class="about-highlights">
 							<div class="highlight-item">
-								<span class="highlight-icon">🏔️</span>
 								<span>Raíces Andinas</span>
 							</div>
 							<div class="highlight-item">
-								<span class="highlight-icon">🌱</span>
 								<span>Sostenibilidad</span>
 							</div>
 							<div class="highlight-item">
-								<span class="highlight-icon">💚</span>
-								<span>Empatía Humana</span>
+								<span>Empatía humana</span>
 							</div>
 						</div>
-						<a href="/nosotros" class="btn btn-outline"
-							>Conoce Nuestra Historia</a
+						<a href="/nosotros" class="btn btn-primary"
+							>Conoce nuestra historia</a
 						>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Blog Section (Resumida) -->
 		<section class="home-blog">
 			<div class="container">
 				<div class="section-header">
-					<h2>Últimas Noticias y Consejos</h2>
+					<h2>Últimas noticias y consejos</h2>
 					<p>
 						Mantente informado sobre las últimas tendencias
 						agrícolas
@@ -78,41 +68,40 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 				<div class="blog-preview">
 					<a href="/blog/diatomaq-ventajas-agricultura-moderna" class="blog-preview-card">
 						<div class="blog-image">
-							<picture>
-								<source srcset="/products/DIATOMAQ.webp" type="image/webp">
-								<img src="/products/DIATOMAQ.webp" alt="Diatomaq - Ventajas en Agricultura" />
-							</picture>
+							<img src="/notices/6-ventajas.svg" alt="6 Ventajas de Diatomaq en la agricultura" loading="lazy" />
 						</div>
-						<h3>6 Ventajas de Diatomaq en la Agricultura</h3>
+						<h3>6 Ventajas de Diatomaq en la agricultura</h3>
 						<p>
 							Descubre las ventajas del Diatomaq, un producto natural
 							para el control de plagas y mejora del suelo
 						</p>
-						<span class="blog-date">Reciente</span>
 					</a>
 					<div class="blog-preview-card">
-						<div class="blog-image">🌿</div>
-						<h3>Más Artículos Próximamente</h3>
+						<div class="blog-image">
+							<img src="/notices/mas-articulos.svg" alt="Más artículos próximamente" loading="lazy" />
+						</div>
+						<h3>Más Artículos próximamente</h3>
 						<p>
 							Estamos preparando más contenido valioso sobre
 							agricultura sostenible
 						</p>
-						<span class="blog-date">Próximamente</span>
 					</div>
 					<div class="blog-preview-card">
-						<div class="blog-image">🌱</div>
-						<h3>Consejos de Cultivo</h3>
+						<div class="blog-image">
+							<img src="/notices/consejos-cultivos.svg" alt="Consejos de cultivo" loading="lazy" />
+						</div>
+						<h3>Consejos de cultivo</h3>
 						<p>Guías prácticas para mejorar tus cultivos de forma natural</p>
-						<span class="blog-date">Próximamente</span>
 					</div>
 					<div class="blog-preview-card">
-						<div class="blog-image">💡</div>
+						<div class="blog-image">
+							<img src="/notices/productos-biologicos.svg" alt="Productos biológicos" loading="lazy" />
+						</div>
 						<h3>Productos Biológicos</h3>
 						<p>
 							Información detallada sobre nuestros productos
 							y sus beneficios
 						</p>
-						<span class="blog-date">Próximamente</span>
 					</div>
 				</div>
 				<div class="blog-cta">
@@ -123,66 +112,52 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 			</div>
 		</section>
 
-		<!-- Products Section (Resumida) -->
 		<section class="home-products">
 			<div class="container">
 				<div class="section-header">
-					<h2>Productos Destacados</h2>
+					<h2>Productos destacados</h2>
 					<p>
 						Soluciones biológicas de alta calidad para maximizar tu rendimiento
 					</p>
 				</div>
 				<div class="products-preview">
-					<div class="product-preview-card">
+					<div class="product-preview-card product-booster">
 						<div class="product-image">
-							<picture>
-								<source srcset="/products/BOOSTER.webp" type="image/webp">
-								<img src="/products/BOOSTER.webp" alt="BOOSTER - Revitalizador biológico a base de algas marinas seleccionadas para nutrir, desintoxicar y proteger las plantas del estrés" loading="lazy" width="200" height="200" />
-							</picture>
+							<img src="/newProducts/BOOSTER.svg" alt="BOOSTER" loading="lazy" />
 						</div>
 						<h3>BOOSTER</h3>
-						<p>Revitalizador biológico a base de algas marinas</p>
+						<p>Revitalizador a base de algas marinas</p>
 					</div>
-					<div class="product-preview-card">
+					<div class="product-preview-card product-root">
 						<div class="product-image">
-							<picture>
-								<source srcset="/products/ROOT.webp" type="image/webp">
-								<img src="/products/ROOT.webp" alt="ROOT - Bioestimulante y activador radicular con complejo de antioxidantes que promueve el crecimiento saludable de las raíces" loading="lazy" width="200" height="200" />
-							</picture>
+							<img src="/newProducts/ROOT.svg" alt="ROOT" loading="lazy" />
 						</div>
 						<h3>ROOT</h3>
 						<p>Bioestimulante y activador radicular</p>
 					</div>
-					<div class="product-preview-card">
+					<div class="product-preview-card product-arbolina">
 						<div class="product-image">
-							<picture>
-								<source srcset="/products/ME.webp" type="image/webp">
-								<img src="/products/ME.webp" alt="ME - Microelementos esenciales formulados a la medida y complejados con algas para complementar la nutrición de los cultivos" loading="lazy" width="200" height="200" />
-							</picture>
-						</div>
-						<h3>ME</h3>
-						<p>Microelementos esenciales complejados</p>
-					</div>
-					<div class="product-preview-card">
-						<div class="product-image">
-							<picture>
-								<source srcset="/products/ARBOLINA.webp" type="image/webp">
-								<img src="/products/ARBOLINA.webp" alt="ARBOLINA - Activador Fisiológico que impulsa la vitalidad de los cultivos y promueve un alto rendimiento fotosintético" loading="lazy" width="200" height="200" />
-							</picture>
+							<img src="/newProducts/ARBOLINA.svg" alt="ARBOLINA" loading="lazy" />
 						</div>
 						<h3>ARBOLINA</h3>
-						<p>Activador Fisiológico para vitalidad</p>
+						<p>Activador fisiológico para vitalidad</p>
+					</div>
+					<div class="product-preview-card product-actigen">
+						<div class="product-image">
+							<img src="/newProducts/ACTIGEN.svg" alt="ACTIGEN" loading="lazy" />
+						</div>
+						<h3>ACTIGEN</h3>
+						<p>Más crecimiento, menos gasto energético</p>
 					</div>
 				</div>
 				<div class="products-cta">
 					<a href="/productos" class="btn btn-primary"
-						>Ver Catálogo Completo</a
+						>Ver catálogo completo</a
 					>
 				</div>
 			</div>
 		</section>
 
-		<!-- Contact Section (Resumida) -->
 		<section class="home-contact">
 			<div class="container">
 				<div class="section-header">
@@ -195,7 +170,7 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 					<div class="contact-info">
 						<div class="contact-item">
 							<span class="contact-icon">📞</span>
-							<span>978723785</span>
+							<span>+51982711622</span>
 						</div>
 						<div class="contact-item">
 							<span class="contact-icon">✉️</span>
@@ -218,47 +193,42 @@ import SchemaOrg from "../components/SchemaOrg.astro";
 			</div>
 		</section>
 
-		</main>
-		
-		<!-- Footer -->
-		<Footer />
+	</main>
+	
+	<Footer />
 
-		<!-- Smooth Scrolling Script -->
-		<script>
-			// Smooth scrolling for anchor links
-			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-				anchor.addEventListener("click", (e: Event) => {
-					e.preventDefault();
-					const target = document.querySelector(
-						(anchor as HTMLAnchorElement).getAttribute("href") ||
-							"",
-					);
-					if (target) {
-						target.scrollIntoView({
-							behavior: "smooth",
-							block: "start",
-						});
-					}
-				});
+	<script>
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener("click", (e: Event) => {
+				e.preventDefault();
+				const target = document.querySelector(
+					(anchor as HTMLAnchorElement).getAttribute("href") ||
+						"",
+				);
+				if (target) {
+					target.scrollIntoView({
+						behavior: "smooth",
+						block: "start",
+					});
+				}
 			});
+		});
 
-			// Intersection Observer for animations
-			const observerOptions = {
-				threshold: 0.1,
-				rootMargin: "0px 0px -50px 0px",
-			};
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: "0px 0px -50px 0px",
+		};
 
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("fade-in-up");
-					}
-				});
-			}, observerOptions);
-
-			// Observe all sections for animation
-			document.querySelectorAll("section").forEach((section) => {
-				observer.observe(section);
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("fade-in-up");
+				}
 			});
-		</script>
+		}, observerOptions);
+
+		document.querySelectorAll("section").forEach((section) => {
+			observer.observe(section);
+		});
+	</script>
 </BaseLayout>
